@@ -546,16 +546,18 @@ const Chat = () => {
 
                             <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
-                            
-                            <div style={{ 
-                                margin: "1rem 0 1.5rem", 
-                                display: "grid",
-                                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                                gap: "0.5rem",
-                                width: "100%",
-                                maxWidth: "700px",
-                                fontSize: "0.85rem"
-                            }}>
+
+                            <div
+                                style={{
+                                    margin: "1rem 0 1.5rem",
+                                    display: "grid",
+                                    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                                    gap: "0.5rem",
+                                    width: "100%",
+                                    maxWidth: "700px",
+                                    fontSize: "0.85rem"
+                                }}
+                            >
                                 <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
                                     <strong style={{ color: "#1a365d" }}>English:</strong> <span style={{ color: "#4a5568" }}>Welcome!</span>
                                 </div>
