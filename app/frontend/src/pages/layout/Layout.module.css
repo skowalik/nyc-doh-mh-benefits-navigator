@@ -40,9 +40,9 @@
 }
 
 .headerLogo {
-    height: 2rem;
+    height: auto;
     width: auto;
-    filter: brightness(0) invert(1);
+    max-height: 2.5rem;
 }
 
 .headerTitle {
@@ -123,7 +123,7 @@
     }
 
     .headerLogo {
-        height: 2.25rem;
+        max-height: 2.75rem;
     }
 
     .headerTitle {
@@ -139,7 +139,7 @@
     }
 
     .headerLogo {
-        height: 2.5rem;
+        max-height: 3rem;
     }
 
     .headerTitle {

@@ -33,20 +33,20 @@
     },
     "developerSettings": "Configuración del desarrollador",
 
-    "chatEmptyStateTitle": "Chatea con tus datos",
-    "chatEmptyStateSubtitle": "Pregunta cualquier cosa o prueba un ejemplo",
+    "chatEmptyStateTitle": "Bienvenido al NYC Benefits Navigator",
+    "chatEmptyStateSubtitle": "Haga preguntas para aprender sobre beneficios de salud y regulaciones",
     "defaultExamples": {
-        "1": "¿Qué está incluido en mi plan Northwind Health Plus que no está en el estándar?",
-        "2": "¿Qué sucede en una revisión de rendimiento?",
-        "3": "¿Qué hace un Gerente de producto?",
-        "placeholder": "Escribe una nueva pregunta (por ejemplo, ¿mi plan cubre exámenes anuales de la vista?)"
+        "1": "¿Cuáles son los niveles de ingresos de 2025 para elegibilidad de beneficios?",
+        "2": "¿Cómo puedo demostrar mi identidad para beneficios?",
+        "3": "¿Qué documentos necesito para la solicitud de Medicaid?",
+        "placeholder": "Pregunte sobre beneficios, elegibilidad o documentos requeridos..."
     },
-    "askTitle": "Pregunta a tus datos",
+    "askTitle": "Pregunte a su navegador de beneficios",
     "multimodalExamples": {
-        "1": "Compara el impacto de las tasas de interés y el PIB en los mercados financieros.",
-        "2": "¿Cuál es la tendencia esperada para el índice S&P 500 en los próximos cinco años? Compáralo con el rendimiento pasado del S&P 500",
-        "3": "¿Puedes identificar alguna correlación entre los precios del petróleo y las tendencias del mercado de valores?",
-        "placeholder": "Ejemplo: ¿Mi plan cubre exámenes anuales de la vista?"
+        "1": "¿Cuáles son los niveles de ingresos de 2025 para elegibilidad de beneficios?",
+        "2": "¿Cómo puedo demostrar mi identidad para beneficios?",
+        "3": "¿Qué documentos necesito para la solicitud de Medicaid?",
+        "placeholder": "Pregunte sobre beneficios, elegibilidad o documentos requeridos..."
     },
     "generatingAnswer": "Generando respuesta",
     "citationWithColon": "Cita:",

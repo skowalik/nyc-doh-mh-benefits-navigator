@@ -1,0 +1,143 @@
+.faqContainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.faqTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.faqCategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.categoryButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 20px;
+    background: white;
+    color: #4a5568;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.categoryButton:hover {
+    background: #edf2f7;
+    border-color: #a0aec0;
+}
+
+.categoryButtonActive {
+    background: #1a365d;
+    color: white;
+    border-color: #1a365d;
+}
+
+.categoryButtonActive:hover {
+    background: #2c5282;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faqItem {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.faqItem:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.faqQuestion {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.faqQuestion:hover {
+    background: #f7fafc;
+}
+
+.faqIcon {
+    font-size: 1rem;
+    color: #718096;
+    transition: transform 0.2s ease;
+}
+
+.faqIconOpen {
+    transform: rotate(180deg);
+}
+
+.faqAnswer {
+    padding: 0 1rem 0.875rem 1rem;
+    color: #4a5568;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    border-top: 1px solid #e2e8f0;
+    background: #fafafa;
+}
+
+.askButton {
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.askButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .faqTitle {
+        font-size: 1.5rem;
+    }
+
+    .categoryButton {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .faqQuestion {
+        font-size: 0.95rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .faqAnswer {
+        font-size: 0.9rem;
+        padding: 0 1.25rem 1rem 1.25rem;
+    }
+}

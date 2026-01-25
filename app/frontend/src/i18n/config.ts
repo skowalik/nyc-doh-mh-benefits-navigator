@@ -3,57 +3,60 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
-import daTranslation from "../locales/da/translation.json";
 import enTranslation from "../locales/en/translation.json";
 import esTranslation from "../locales/es/translation.json";
-import frTranslation from "../locales/fr/translation.json";
-import jaTranslation from "../locales/ja/translation.json";
-import nlTranslation from "../locales/nl/translation.json";
-import ptBRTranslation from "../locales/ptBR/translation.json";
-import trTranslation from "../locales/tr/translation.json";
-import itTranslation from "../locales/it/translation.json";
 import plTranslation from "../locales/pl/translation.json";
 
-export const supportedLngs: { [key: string]: { name: string; locale: string } } = {
-    da: {
-        name: "Dansk",
-        locale: "da-DK"
-    },
+export const supportedLngs: { [key: string]: { name: string; locale: string; nativeName: string } } = {
     en: {
         name: "English",
-        locale: "en-US"
+        locale: "en-US",
+        nativeName: "English"
     },
     es: {
-        name: "Español",
-        locale: "es-ES"
+        name: "Spanish",
+        locale: "es-ES",
+        nativeName: "Español"
     },
-    fr: {
-        name: "Français",
-        locale: "fr-FR"
+    zh: {
+        name: "Chinese",
+        locale: "zh-CN",
+        nativeName: "中文"
     },
-    ja: {
-        name: "日本語",
-        locale: "ja-JP"
+    ru: {
+        name: "Russian",
+        locale: "ru-RU",
+        nativeName: "Русский"
     },
-    nl: {
-        name: "Nederlands",
-        locale: "nl-NL"
+    ht: {
+        name: "Haitian Creole",
+        locale: "ht-HT",
+        nativeName: "Kreyòl Ayisyen"
     },
-    ptBR: {
-        name: "Português Brasileiro",
-        locale: "pt-BR"
+    bn: {
+        name: "Bengali",
+        locale: "bn-BD",
+        nativeName: "বাংলা"
     },
-    tr: {
-        name: "Türkçe",
-        locale: "tr-TR"
+    ko: {
+        name: "Korean",
+        locale: "ko-KR",
+        nativeName: "한국어"
     },
-    it: {
-        name: "Italiano",
-        locale: "it-IT"
+    yi: {
+        name: "Yiddish",
+        locale: "yi",
+        nativeName: "ייִדיש"
+    },
+    ar: {
+        name: "Arabic",
+        locale: "ar-SA",
+        nativeName: "العربية"
     },
     pl: {
-        name: "Polski",
-        locale: "pl-PL"
+        name: "Polish",
+        locale: "pl-PL",
+        nativeName: "Polski"
     }
 };
 
@@ -65,15 +68,15 @@ i18next
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         resources: {
-            da: { translation: daTranslation },
             en: { translation: enTranslation },
             es: { translation: esTranslation },
-            fr: { translation: frTranslation },
-            ja: { translation: jaTranslation },
-            nl: { translation: nlTranslation },
-            ptBR: { translation: ptBRTranslation },
-            tr: { translation: trTranslation },
-            it: { translation: itTranslation },
+            zh: { translation: enTranslation }, // Fallback to English until translation added
+            ru: { translation: enTranslation }, // Fallback to English until translation added
+            ht: { translation: enTranslation }, // Fallback to English until translation added
+            bn: { translation: enTranslation }, // Fallback to English until translation added
+            ko: { translation: enTranslation }, // Fallback to English until translation added
+            yi: { translation: enTranslation }, // Fallback to English until translation added
+            ar: { translation: enTranslation }, // Fallback to English until translation added
             pl: { translation: plTranslation }
         },
         fallbackLng: "en",

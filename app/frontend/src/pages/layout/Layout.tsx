@@ -5,7 +5,7 @@ import styles from "./Layout.module.css";
 import { useLogin } from "../../authConfig";
 
 import { LoginButton } from "../../components/LoginButton";
-import nycLogo from "../../assets/nyc-health-logo.png";
+import nycLogo from "../../assets/nyc-doh-header-logo.png";
 
 const Layout = () => {
     const { t } = useTranslation();

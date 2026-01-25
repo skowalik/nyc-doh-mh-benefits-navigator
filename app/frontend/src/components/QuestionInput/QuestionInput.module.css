@@ -6,15 +6,27 @@
     width: 100%;
     padding: 0.625rem;
     background: white;
+    transition: height 0.15s ease-out;
 }
 
 .questionInputTextArea {
     width: 100%;
     line-height: 1.5rem;
+    min-height: 2.5rem;
     max-height: 8rem;
     overflow-y: auto;
     font-size: 16px; /* Prevents iOS zoom on focus */
     -webkit-appearance: none;
+    resize: none;
+}
+
+/* Hide the resize grabber that Fluent UI might add */
+.questionInputTextArea textarea {
+    resize: none !important;
+}
+
+.questionInputTextArea :global(.ms-TextField-fieldGroup) {
+    min-height: 2.5rem;
 }
 
 .questionInputButtonsContainer {

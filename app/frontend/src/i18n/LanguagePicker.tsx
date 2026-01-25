@@ -27,12 +27,16 @@ export const LanguagePicker = ({ onLanguageChange }: Props) => {
                 selectedKey={i18n.language}
                 options={Object.entries(supportedLngs).map(([code, details]) => ({
                     key: code,
-                    text: details.name,
+                    text: `${details.nativeName} (${details.name})`,
                     selected: code === i18n.language,
                     data: code
                 }))}
                 onChange={handleLanguageChange}
                 ariaLabel={t("labels.languagePicker")}
+                styles={{
+                    dropdown: { minWidth: 200 },
+                    title: { fontWeight: 500 }
+                }}
             />
         </div>
     );

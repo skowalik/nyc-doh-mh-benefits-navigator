@@ -4,13 +4,13 @@ import { Helmet } from "react-helmet-async";
 import { Panel, DefaultButton } from "@fluentui/react";
 import readNDJSONStream from "ndjson-readablestream";
 
-import appLogo from "../../assets/nyc-health-logo.png";
 import styles from "./Chat.module.css";
 
 import { chatApi, configApi, RetrievalMode, ChatAppResponse, ChatAppResponseOrError, ChatAppRequest, ResponseMessage, SpeechConfig } from "../../api";
 import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
 import { QuestionInput } from "../../components/QuestionInput";
 import { ExampleList } from "../../components/Example";
+import { FAQ } from "../../components/FAQ";
 import { UserChatMessage } from "../../components/UserChatMessage";
 import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel";
 import { HistoryPanel } from "../../components/HistoryPanel";
@@ -533,6 +533,7 @@ const Chat = () => {
                     )}
                 </div>
                 <div className={styles.commandsContainer}>
+                    <LanguagePicker onLanguageChange={newLang => i18n.changeLanguage(newLang)} />
                     <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                     {showUserUpload && <UploadFile className={styles.commandButton} disabled={!loggedIn} />}
                     <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
@@ -542,32 +543,14 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <img src={appLogo} alt="NYC Health" style={{ width: "200px", height: "auto", marginBottom: "1rem" }} />
-
-                            <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
-                            <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
-
-                            <div className={styles.languageGrid}>
-                                <div className={styles.languageCard}>
-                                    <strong>English:</strong> <span>Welcome!</span>
-                                </div>
-                                <div className={styles.languageCard}>
-                                    <strong>Español:</strong> <span>¡Bienvenido!</span>
-                                </div>
-                                <div className={styles.languageCard}>
-                                    <strong>中文:</strong> <span>欢迎!</span>
-                                </div>
-                                <div className={styles.languageCard}>
-                                    <strong>Русский:</strong> <span>Добро пожаловать!</span>
-                                </div>
-                                <div className={styles.languageCard}>
-                                    <strong>Kreyòl:</strong> <span>Byenveni!</span>
-                                </div>
+                            <div className={styles.heroSection}>
+                                <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
+                                <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
                             </div>
 
-                            {showLanguagePicker && <LanguagePicker onLanguageChange={newLang => i18n.changeLanguage(newLang)} />}
-
                             <ExampleList onExampleClicked={onExampleClicked} useMultimodalAnswering={showMultimodalOptions} />
+                            
+                            <FAQ onQuestionClick={onExampleClicked} />
                         </div>
                     ) : (
                         <div className={styles.chatMessageStream}>
