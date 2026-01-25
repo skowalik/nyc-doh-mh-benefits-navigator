@@ -2,27 +2,33 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .main {
     display: flex;
     flex: 1;
-    min-height: 0; /* allow inner scroll areas to work inside flex container */
+    min-height: 0;
+    overflow: hidden;
 }
 
 .header {
     background: linear-gradient(90deg, #1a365d 0%, #2b6cb0 100%);
     color: #ffffff;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .headerContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     position: relative;
+    min-height: 44px;
 }
 
 .headerTitleContainer {
@@ -30,11 +36,11 @@
     align-items: center;
     color: #ffffff;
     text-decoration: none;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .headerLogo {
-    height: 2.5rem;
+    height: 2rem;
     width: auto;
     filter: brightness(0) invert(1);
 }
@@ -42,7 +48,8 @@
 .headerTitle {
     margin: 0;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .headerNavList {
@@ -105,12 +112,39 @@
 .loginMenuContainer {
     display: flex;
     align-items: center;
-    gap: 0; /* Ensure no gap between login button and menu toggle */
+    gap: 0;
 }
 
+/* Tablet */
+@media (min-width: 768px) {
+    .headerContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .headerLogo {
+        height: 2.25rem;
+    }
+
+    .headerTitle {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
 @media (min-width: 992px) {
+    .headerContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .headerLogo {
+        height: 2.5rem;
+    }
+
     .headerTitle {
         font-weight: 600;
+        font-size: 1.1rem;
     }
 
     .headerNavList {

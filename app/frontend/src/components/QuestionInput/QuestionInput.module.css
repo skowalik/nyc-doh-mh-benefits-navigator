@@ -1,28 +1,51 @@
 .questionInputContainer {
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     box-shadow:
-        0px 0.5rem 1rem rgba(0, 0, 0, 0.14),
-        0px 0px 0.125rem rgba(0, 0, 0, 0.12);
+        0px 2px 8px rgba(0, 0, 0, 0.1),
+        0px 0px 1px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.625rem;
     background: white;
 }
 
 .questionInputTextArea {
     width: 100%;
-    line-height: 2.5rem;
-    max-height: 18rem;
+    line-height: 1.5rem;
+    max-height: 8rem;
     overflow-y: auto;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    -webkit-appearance: none;
 }
 
 .questionInputButtonsContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+/* Tablet */
+@media (min-width: 768px) {
+    .questionInputContainer {
+        padding: 0.75rem;
+    }
+
+    .questionInputTextArea {
+        line-height: 2rem;
+        max-height: 12rem;
+    }
+}
+
+/* Desktop */
 @media (min-width: 992px) {
     .questionInputContainer {
-        /* Allow the container to grow; text area will scroll instead */
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+    }
+
+    .questionInputTextArea {
+        line-height: 2.5rem;
+        max-height: 18rem;
     }
 }
