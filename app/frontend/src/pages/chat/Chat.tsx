@@ -542,17 +542,35 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <img src={appLogo} alt="App logo" width="120" height="120" />
+                            <img src={appLogo} alt="NYC Health" style={{ width: "200px", height: "auto", marginBottom: "1rem" }} />
 
                             <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
                             
-                            <div style={{ margin: "20px 0", textAlign: "center", border: "1px solid #e0e0e0", borderRadius: "8px", padding: "15px", backgroundColor: "#fafafa" }}>
-                                <p style={{ margin: "5px 0", color: "#444" }}><strong>English:</strong> Welcome to the NYC Benefits Navigator.</p>
-                                <p style={{ margin: "5px 0", color: "#444" }}><strong>Español:</strong> Bienvenido al Navegador de Beneficios de NYC.</p>
-                                <p style={{ margin: "5px 0", color: "#444" }}><strong>中文:</strong> 欢迎使用 NYC 福利导航。</p>
-                                <p style={{ margin: "5px 0", color: "#444" }}><strong>Русский:</strong> Добро пожаловать в Навигатор льгот NYC.</p>
-                                <p style={{ margin: "5px 0", color: "#444" }}><strong>Kreyòl Ayisyen:</strong> Byenveni nan NYC Benefits Navigator.</p>
+                            <div style={{ 
+                                margin: "1rem 0 1.5rem", 
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                                gap: "0.5rem",
+                                width: "100%",
+                                maxWidth: "700px",
+                                fontSize: "0.85rem"
+                            }}>
+                                <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                    <strong style={{ color: "#1a365d" }}>English:</strong> <span style={{ color: "#4a5568" }}>Welcome!</span>
+                                </div>
+                                <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                    <strong style={{ color: "#1a365d" }}>Español:</strong> <span style={{ color: "#4a5568" }}>¡Bienvenido!</span>
+                                </div>
+                                <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                    <strong style={{ color: "#1a365d" }}>中文:</strong> <span style={{ color: "#4a5568" }}>欢迎!</span>
+                                </div>
+                                <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                    <strong style={{ color: "#1a365d" }}>Русский:</strong> <span style={{ color: "#4a5568" }}>Добро пожаловать!</span>
+                                </div>
+                                <div style={{ padding: "0.5rem 1rem", background: "white", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                    <strong style={{ color: "#1a365d" }}>Kreyòl:</strong> <span style={{ color: "#4a5568" }}>Byenveni!</span>
+                                </div>
                             </div>
 
                             {showLanguagePicker && <LanguagePicker onLanguageChange={newLang => i18n.changeLanguage(newLang)} />}

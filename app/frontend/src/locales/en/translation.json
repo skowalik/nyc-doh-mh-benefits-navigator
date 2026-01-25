@@ -39,14 +39,14 @@
         "1": "What are the 2025 income levels for benefit eligibility?",
         "2": "How do I prove my identity for benefits?",
         "3": "What documents do I need for Medicaid application?",
-        "placeholder": "Type a new question (e.g. does my plan cover annual eye exams?)"
+        "placeholder": "Ask about benefits, eligibility, or required documents..."
     },
     "askTitle": "Ask your data",
     "multimodalExamples": {
-        "1": "Compare the impact of interest rates and GDP in financial markets.",
-        "2": "What is the expected trend for the S&P 500 index over the next five years? Compare it to the past S&P 500 performance",
-        "3": "Can you identify any correlation between oil prices and stock market trends?",
-        "placeholder": "Example: Does my plan cover annual eye exams?"
+        "1": "What are the 2025 income levels for benefit eligibility?",
+        "2": "How do I prove my identity for benefits?",
+        "3": "What documents do I need for Medicaid application?",
+        "placeholder": "Ask about benefits, eligibility, or required documents..."
     },
     "generatingAnswer": "Generating answer",
     "citationWithColon": "Citation:",
