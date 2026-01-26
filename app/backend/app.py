@@ -143,41 +143,45 @@ async def content_file(path: str, auth_claims: dict[str, Any]):
     if AZURE_ENFORCE_ACCESS_CONTROL is set to true, logged in users can only access files they have access to
     This is also slow and memory hungry.
     """
-    # Remove page number from path, filename-1.txt -> filename.txt
-    # This shouldn't typically be necessary as browsers don't send hash fragments to servers
-    if path.find("#page=") > 0:
-        path_parts = path.rsplit("#page=", 1)
-        path = path_parts[0]
-    current_app.logger.info("Opening file %s", path)
-    blob_manager: BlobManager = current_app.config[CONFIG_GLOBAL_BLOB_MANAGER]
+    try:
+        # Remove page number from path, filename-1.txt -> filename.txt
+        # This shouldn't typically be necessary as browsers don't send hash fragments to servers
+        if path.find("#page=") > 0:
+            path_parts = path.rsplit("#page=", 1)
+            path = path_parts[0]
+        current_app.logger.info("Opening file %s", path)
+        blob_manager: BlobManager = current_app.config[CONFIG_GLOBAL_BLOB_MANAGER]
 
-    # Get bytes and properties from the blob manager
-    result = await blob_manager.download_blob(path)
+        # Get bytes and properties from the blob manager
+        result = await blob_manager.download_blob(path)
 
-    if result is None:
-        current_app.logger.info("Path not found in general Blob container: %s", path)
-        user_oid = auth_claims.get("oid") if isinstance(auth_claims, dict) else None
-        if current_app.config[CONFIG_USER_UPLOAD_ENABLED] and user_oid:
-            user_blob_manager: AdlsBlobManager = current_app.config[CONFIG_USER_BLOB_MANAGER]
-            result = await user_blob_manager.download_blob(path, user_oid=user_oid)
-            if result is None:
-                current_app.logger.exception("Path not found in DataLake: %s", path)
+        if result is None:
+            current_app.logger.info("Path not found in general Blob container: %s", path)
+            user_oid = auth_claims.get("oid") if isinstance(auth_claims, dict) else None
+            if current_app.config[CONFIG_USER_UPLOAD_ENABLED] and user_oid:
+                user_blob_manager: AdlsBlobManager = current_app.config[CONFIG_USER_BLOB_MANAGER]
+                result = await user_blob_manager.download_blob(path, user_oid=user_oid)
+                if result is None:
+                    current_app.logger.exception("Path not found in DataLake: %s", path)
 
-    if not result:
-        abort(404)
+        if not result:
+            abort(404)
 
-    content, properties = result
+        content, properties = result
 
-    if not properties or "content_settings" not in properties:
-        abort(404)
+        if not properties or "content_settings" not in properties:
+            abort(404)
 
-    mime_type = properties["content_settings"]["content_type"]
-    if mime_type == "application/octet-stream":
-        mime_type = mimetypes.guess_type(path)[0] or "application/octet-stream"
+        mime_type = properties["content_settings"]["content_type"]
+        if mime_type == "application/octet-stream":
+            mime_type = mimetypes.guess_type(path)[0] or "application/octet-stream"
 
-    # Create a BytesIO object from the bytes
-    blob_file = io.BytesIO(content)
-    return await send_file(blob_file, mimetype=mime_type, as_attachment=False, attachment_filename=path)
+        # Create a BytesIO object from the bytes
+        blob_file = io.BytesIO(content)
+        return await send_file(blob_file, mimetype=mime_type, as_attachment=False, attachment_filename=path)
+    except Exception as error:
+        current_app.logger.exception("Error serving content file %s: %s", path, error)
+        abort(500)
 
 
 class JSONEncoder(json.JSONEncoder):
