@@ -1,10 +1,12 @@
 {
-    "pageTitle": "Azure OpenAI + Wyszukiwanie AI",
-    "headerTitle": "Azure OpenAI + Wyszukiwanie AI",
+    "pageTitle": "NYC Benefits Navigator",
+    "headerTitle": "Benefits Navigator",
     "chat": "Czat",
     "login": "Zaloguj się",
     "logout": "Wyloguj się",
     "clearChat": "Wyczyść czat",
+    "retry": "Ponów",
+    "loginRequired": "Zaloguj się, aby kontynuować...",
     "history": {
         "chatHistory": "Historia czatu",
         "openChatHistory": "Otwórz historię czatu",

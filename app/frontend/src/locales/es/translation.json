@@ -5,6 +5,8 @@
     "login": "Iniciar sesión",
     "logout": "Cerrar sesión",
     "clearChat": "Borrar chat",
+    "retry": "Reintentar",
+    "loginRequired": "Por favor inicie sesión para continuar...",
     "history": {
         "chatHistory": "Historial de chat",
         "openChatHistory": "Abrir historial de chat",

@@ -78,7 +78,7 @@ export const QuestionInput = ({ onSend, onStop, disabled, placeholder, clearOnSe
     const sendQuestionDisabled = disabled || !question.trim() || disableRequiredAccessControl;
 
     if (disableRequiredAccessControl) {
-        placeholder = "Please login to continue...";
+        placeholder = t("loginRequired");
     }
 
     return (
