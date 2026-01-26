@@ -4,7 +4,7 @@ import styles from "./Layout.module.css";
 import { useLogin } from "../../authConfig";
 
 import { LoginButton } from "../../components/LoginButton";
-import nycLogo from "../../assets/nyc-health-logo.png";
+import nycLogo from "../../assets/nyc_health.png";
 
 const Layout = () => {
     return (
