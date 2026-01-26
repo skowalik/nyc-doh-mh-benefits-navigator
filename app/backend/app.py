@@ -156,8 +156,8 @@ async def content_file(path: str, auth_claims: dict[str, Any]):
 
     if result is None:
         current_app.logger.info("Path not found in general Blob container: %s", path)
-        if current_app.config[CONFIG_USER_UPLOAD_ENABLED]:
-            user_oid = auth_claims["oid"]
+        user_oid = auth_claims.get("oid") if isinstance(auth_claims, dict) else None
+        if current_app.config[CONFIG_USER_UPLOAD_ENABLED] and user_oid:
             user_blob_manager: AdlsBlobManager = current_app.config[CONFIG_USER_BLOB_MANAGER]
             result = await user_blob_manager.download_blob(path, user_oid=user_oid)
             if result is None:

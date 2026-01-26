@@ -21,11 +21,19 @@ def authenticated_path(route_fn: Callable[[str, dict[str, Any]], Any]):
         auth_helper = current_app.config[CONFIG_AUTH_CLIENT]
         search_client = current_app.config[CONFIG_SEARCH_CLIENT]
         authorized = False
+        auth_claims: dict[str, Any] = {}
         try:
             auth_claims = await auth_helper.get_auth_claims_if_enabled(request.headers)
-            authorized = await auth_helper.check_path_auth(path, auth_claims, search_client)
         except AuthError:
-            abort(403)
+            if auth_helper.enforce_access_control:
+                abort(403)
+        try:
+            if auth_helper.enforce_access_control:
+                if not auth_claims:
+                    abort(403)
+                authorized = await auth_helper.check_path_auth(path, auth_claims, search_client)
+            else:
+                authorized = True
         except Exception as error:
             logging.exception("Problem checking path auth %s", error)
             return error_response(error, route="/content")
