@@ -30,8 +30,12 @@ def authenticated_path(route_fn: Callable[[str, dict[str, Any]], Any]):
         try:
             if auth_helper.enforce_access_control:
                 if not auth_claims:
-                    abort(403)
-                authorized = await auth_helper.check_path_auth(path, auth_claims, search_client)
+                    if auth_helper.enable_unauthenticated_access:
+                        authorized = True
+                    else:
+                        abort(403)
+                else:
+                    authorized = await auth_helper.check_path_auth(path, auth_claims, search_client)
             else:
                 authorized = True
         except Exception as error:
