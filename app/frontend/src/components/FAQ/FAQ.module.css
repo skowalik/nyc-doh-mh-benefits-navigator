@@ -8,7 +8,7 @@
 .faqTitle {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1a365d;
+    color: #002d72;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -38,13 +38,13 @@
 }
 
 .categoryButtonActive {
-    background: #1a365d;
+    background: #002d72;
     color: white;
-    border-color: #1a365d;
+    border-color: #002d72;
 }
 
 .categoryButtonActive:hover {
-    background: #2c5282;
+    background: #2f6eb9;
 }
 
 .faqList {
@@ -106,7 +106,7 @@
 .askButton {
     margin-top: 0.75rem;
     padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #00864a;
     color: white;
     border: none;
     border-radius: 6px;
@@ -119,7 +119,8 @@
 
 .askButton:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 134, 74, 0.4);
+    background: #006b3c;
 }
 
 /* Tablet and up */

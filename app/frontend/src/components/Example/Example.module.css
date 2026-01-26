@@ -28,8 +28,8 @@
 
 .example:hover,
 .example:active {
-    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.15);
-    border-color: #2b6cb0;
+    box-shadow: 0 4px 12px rgba(0, 45, 114, 0.15);
+    border-color: #002d72;
 }
 
 .exampleText {
@@ -39,7 +39,7 @@
     max-width: 100%;
     padding: 0.875rem 1rem;
     min-height: auto;
-    color: #2d3748;
+    color: #002d72;
     line-height: 1.4;
 }
 
