@@ -1,0 +1,237 @@
+{
+    "pageTitle": "NYC Benefits Navigator",
+    "headerTitle": "Benefits Navigator",
+    "chat": "聊天",
+    "login": "登录",
+    "logout": "登出",
+    "clearChat": "清除聊天",
+    "retry": "重试",
+    "loginRequired": "请登录以继续...",
+    "history": {
+        "chatHistory": "聊天历史",
+        "openChatHistory": "打开聊天历史",
+        "noHistory": "没有聊天历史",
+        "deleteModalTitle": "删除聊天历史",
+        "deleteModalDescription": "此操作无法撤销。删除此聊天历史？",
+        "deleteLabel": "删除",
+        "cancelLabel": "取消",
+        "today": "今天",
+        "yesterday": "昨天",
+        "last7days": "过去7天",
+        "last30days": "过去30天"
+    },
+    "upload": {
+        "fileLabel": "上传文件：",
+        "uploadedFilesLabel": "已上传的文件：",
+        "noFilesUploaded": "尚未上传文件",
+        "loading": "加载中...",
+        "manageFileUploads": "管理文件上传",
+        "uploadingFiles": "正在上传文件...",
+        "uploadedFileError": "文件上传错误 - 请重试或联系管理员。",
+        "deleteFile": "删除文件",
+        "deletingFile": "正在删除文件...",
+        "errorDeleting": "删除错误。",
+        "fileDeleted": "文件已删除"
+    },
+    "developerSettings": "开发者设置",
+
+    "chatEmptyStateTitle": "欢迎使用纽约市福利导航",
+    "chatEmptyStateSubtitle": "询问有关健康福利和法规的问题",
+    "defaultExamples": {
+        "1": "2025年福利资格的收入水平是多少？",
+        "2": "如何证明我的身份以获得福利？",
+        "3": "申请医疗补助需要哪些文件？",
+        "placeholder": "询问关于福利、资格或所需文件的问题..."
+    },
+    "askTitle": "询问您的数据",
+    "multimodalExamples": {
+        "1": "2025年福利资格的收入水平是多少？",
+        "2": "如何证明我的身份以获得福利？",
+        "3": "申请医疗补助需要哪些文件？",
+        "placeholder": "询问关于福利、资格或所需文件的问题..."
+    },
+    "generatingAnswer": "正在生成答案",
+    "citationWithColon": "引用：",
+    "followupQuestions": "后续问题：",
+
+    "tooltips": {
+        "submitQuestion": "提交问题",
+        "stopStreaming": "停止流式传输",
+        "askWithVoice": "用语音提问",
+        "stopRecording": "停止录制问题",
+        "showThoughtProcess": "显示思考过程",
+        "showSupportingContent": "显示支持内容",
+        "speakAnswer": "朗读答案",
+        "info": "信息",
+        "save": "保存",
+        "copy": "复制",
+        "copied": "已复制！"
+    },
+
+    "headerTexts":{
+        "thoughtProcess": "思考过程",
+        "supportingContent": "支持内容",
+        "citation": "引用"
+    },
+
+    "labels": {
+        "toggleMenu": "切换菜单",
+        "languagePicker": "选择您的语言",
+        "headerText": "配置答案生成",
+        "closeButton": "关闭",
+        "promptTemplate": "覆盖提示模板",
+        "temperature": "温度",
+        "seed": "种子",
+        "minimumSearchScore": "最低搜索分数",
+        "minimumRerankerScore": "最低重排序分数",
+        "retrieveCount": "检索搜索结果数量：",
+        "agenticReasoningEffort": "检索推理努力",
+        "agenticReasoningEffortOptions": {
+            "minimal": "最小",
+            "low": "低",
+            "medium": "中等"
+        },
+        "includeCategory": "包含类别",
+        "includeCategoryOptions": {
+            "all": "全部"
+        },
+        "excludeCategory": "排除类别",
+        "useSemanticRanker": "使用语义排序器进行检索",
+        "useSemanticCaptions": "使用语义标题",
+        "useQueryRewriting": "使用查询重写进行检索",
+        "reasoningEffort": "推理努力",
+        "reasoningEffortOptions": {
+            "minimal": "最小（仅GPT-5）",
+            "low": "低",
+            "medium": "中等",
+            "high": "高"
+        },
+        "useSuggestFollowupQuestions": "建议后续问题",
+        "useAgenticKnowledgeBase": "使用代理检索",
+        "useWebSource": "包含网络来源",
+        "useSharePointSource": "包含SharePoint来源",
+        "llmInputs": "LLM输入源",
+        "llmInputsOptions": {
+            "texts": "文本来源",
+            "images": "图像来源",
+            "textAndImages": "文本和图像来源"
+        },
+        "retrievalMode": {
+            "label": "检索模式",
+            "options": {
+                "hybrid": "向量 + 文本（混合）",
+                "vectors": "向量",
+                "texts": "文本"
+            }
+        },
+        "vector": {
+            "label": "包含的向量字段",
+            "options": {
+                "embedding": "文本嵌入",
+                "imageEmbedding": "图像嵌入"
+            }
+        },
+        "useOidSecurityFilter": "使用OID安全过滤器",
+        "useGroupsSecurityFilter": "使用组安全过滤器",
+        "shouldStream": "流式传输聊天完成响应"
+    },
+
+    "helpTexts": {
+        "promptTemplate": "覆盖用于根据问题和搜索结果生成答案的提示。要附加到现有提示而不是替换整个提示，请以'>>>'开始您的提示。",
+        "temperature": "设置生成答案的LLM请求的温度。较高的温度会产生更有创意的响应，但可能不太准确。",
+        "seed": "设置种子以提高模型响应的可重复性。种子可以是任何整数。",
+        "searchScore": "设置从Azure AI搜索返回的搜索结果的最低分数。分数范围取决于您使用的是混合（默认）、仅向量还是仅文本。",
+        "rerankerScore": "设置从语义重排序器返回的搜索结果的最低分数。分数始终在0-4之间。分数越高，结果与问题的语义相关性越强。",
+        "retrieveNumber": "设置从Azure AI搜索检索的搜索结果数量。更多结果可能增加找到正确答案的可能性，但可能导致模型'迷失在中间'。",
+        "agenticReasoningEffort": "控制代理在规划检索子查询时使用的推理量。更高的努力可以提高召回率，但会增加延迟和令牌消耗。",
+        "includeCategory": "指定要包含在搜索结果中的类别。默认数据集中未使用类别。",
+        "excludeCategory": "指定要从搜索结果中排除的类别。默认数据集中未使用类别。",
+        "useSemanticReranker": "启用Azure AI搜索语义排序器，该模型根据与用户查询的语义相似性重新排列搜索结果。",
+        "useQueryRewriting": "启用Azure AI搜索查询重写，这是一个修改用户查询以改善搜索结果的过程。需要启用语义排序器。",
+        "reasoningEffort": "设置LLM的推理努力。较高的值会产生更多的推理，但可能需要更长时间来生成响应。默认为中等。",
+        "useSemanticCaptions": "将语义标题发送到LLM而不是完整的搜索结果。语义标题是在语义排序过程中从搜索结果中提取的。",
+        "suggestFollowupQuestions": "要求LLM根据用户的查询建议后续问题。",
+        "textEmbeddings": "选中时，搜索将使用仅文本嵌入模型的提取文本块的嵌入。",
+        "imageEmbeddings": "选中时，搜索将使用多模态嵌入模型的提取图像的嵌入。",
+        "llmTextInputs": "选中时，搜索结果中的文本内容将作为上下文发送到LLM。",
+        "llmImageInputs": "选中时，搜索结果中的图像将作为上下文发送到LLM。",
+        "retrievalMode": "设置Azure AI搜索查询的检索模式。`向量 + 文本（混合）`结合使用向量搜索和全文搜索，`向量`仅使用向量搜索，`文本`仅使用全文搜索。混合通常是最佳选择。",
+        "streamChat": "在生成时持续将响应流式传输到聊天UI。",
+        "useOidSecurityFilter": "根据已认证用户的OID过滤搜索结果。",
+        "useGroupsSecurityFilter": "根据已认证用户的组过滤搜索结果。",
+        "useAgenticKnowledgeBase": "使用Azure AI搜索的代理检索进行多查询规划。始终使用语义排序器。",
+        "useWebSource": "用网络搜索结果增强检索，与您的索引数据集一起使用。",
+        "useSharePointSource": "用SharePoint内容增强检索，与您的索引数据集一起使用。"
+    },
+
+    "overallSettings": "总体设置",
+    "searchSettings": "搜索设置",
+    "llmSettings": "LLM设置",
+
+    "faq": {
+        "title": "常见问题",
+        "askThisQuestion": "问这个问题",
+        "categories": {
+            "all": "全部",
+            "eligibility": "资格",
+            "applying": "申请",
+            "afterEnrollment": "登记后",
+            "benefits": "福利",
+            "managedCare": "管理式医疗",
+            "renewals": "续期",
+            "changesHelp": "变更和帮助"
+        },
+        "questions": {
+            "eligibility1": "谁有资格在纽约市获得医疗补助？",
+            "eligibility1Answer": "医疗补助适用于符合收入和家庭规模要求的纽约市居民。资格取决于收入、家庭规模、年龄、残疾状态、怀孕和移民身份。",
+            "eligibility2": "无证移民可以获得医疗补助吗？",
+            "eligibility2Answer": "一些无证纽约人可能有资格获得紧急医疗补助、孕妇医疗补助或Essential Plan（19-64岁）。纽约还为65岁以上的成年人提供医疗补助，无论移民身份如何。",
+            "eligibility3": "有工作会使我失去医疗补助资格吗？",
+            "eligibility3Answer": "不会。如果收入低于项目限制，许多工作的个人和家庭都有资格。",
+            "eligibility4": "即使我没有资格，我的孩子也可以获得医疗补助吗？",
+            "eligibility4Answer": "是的。儿童通常在比成人更高的收入水平下符合资格。",
+            "applying1": "如何在纽约市申请医疗补助？",
+            "applying1Answer": "您可以在NY State of Health或ACCESS HRA在线申请、通过电话、邮件申请，或在认证的登记顾问的帮助下申请。",
+            "applying2": "申请需要哪些文件？",
+            "applying2Answer": "通常需要：身份证明、收入（工资单、纳税申报表）、家庭信息、社会安全号码（如有）和移民文件（如适用）。",
+            "applying3": "我可以全年申请吗？",
+            "applying3Answer": "是的。医疗补助登记全年开放。",
+            "applying4": "获得批准需要多长时间？",
+            "applying4Answer": "大多数申请在30-45天内处理。孕妇和紧急情况可能更快。",
+            "afterEnrollment1": "我的保险什么时候开始？",
+            "afterEnrollment1Answer": "保险通常从您申请当月的第一天开始。",
+            "afterEnrollment2": "我会收到医疗补助卡吗？",
+            "afterEnrollment2Answer": "是的。您将收到NYS医疗补助卡和有关您的健康计划的信息。",
+            "afterEnrollment3": "如果我从未收到医疗补助卡怎么办？",
+            "afterEnrollment3Answer": "您应该联系NY State of Health或NYC HRA申请补发。",
+            "benefits1": "医疗补助涵盖什么？",
+            "benefits1Answer": "医疗补助涵盖医生就诊、住院护理、急救服务、处方药、心理健康、牙科、视力、产科护理和预防服务。",
+            "benefits2": "医疗补助涵盖牙科和视力吗？",
+            "benefits2Answer": "是的，包括检查、清洁、眼镜和一些手术。",
+            "benefits3": "医疗补助可以支付我登记前的医疗账单吗？",
+            "benefits3Answer": "是的。如果您符合资格，医疗补助可能涵盖申请前90天的服务。",
+            "managedCare1": "什么是医疗补助管理式医疗计划？",
+            "managedCare1Answer": "管理您的护理和提供者网络的健康保险计划。",
+            "managedCare2": "我必须选择一个计划吗？",
+            "managedCare2Answer": "是的。如果您不选择，可能会为您分配一个。",
+            "managedCare3": "我可以更改我的计划吗？",
+            "managedCare3Answer": "是的。在大多数情况下，您可以随时更改计划。",
+            "renewals1": "我需要每年续期医疗补助吗？",
+            "renewals1Answer": "是的。您必须完成年度续期。",
+            "renewals2": "如果我错过续期会怎样？",
+            "renewals2Answer": "您的保险可能会终止。您可能需要重新申请。",
+            "renewals3": "我从未收到续期通知——我该怎么办？",
+            "renewals3Answer": "登录您的账户或立即联系NYC HRA。",
+            "changesHelp1": "我需要报告哪些变更？",
+            "changesHelp1Answer": "收入、地址、家庭规模、怀孕或新保险。",
+            "changesHelp2": "如果我的收入增加，我会失去医疗补助吗？",
+            "changesHelp2Answer": "不一定。您可能会被转移到另一个低成本计划。",
+            "changesHelp3": "我的申请被拒绝了——我该怎么办？",
+            "changesHelp3Answer": "您可以申请上诉或公平听证。",
+            "changesHelp4": "我在哪里可以获得登记帮助？",
+            "changesHelp4Answer": "纽约市登记顾问、社区健康中心和医院提供免费帮助。",
+            "changesHelp5": "有人可以用我的语言帮助我吗？",
+            "changesHelp5Answer": "是的。提供多种语言的翻译服务。"
+        }
+    }
+}

@@ -549,7 +549,7 @@ const Chat = () => {
                             </div>
 
                             <ExampleList onExampleClicked={onExampleClicked} useMultimodalAnswering={showMultimodalOptions} />
-                            
+
                             <FAQ onQuestionClick={onExampleClicked} />
                         </div>
                     ) : (

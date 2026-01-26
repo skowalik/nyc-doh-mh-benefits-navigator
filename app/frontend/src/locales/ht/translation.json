@@ -1,0 +1,237 @@
+{
+    "pageTitle": "NYC Benefits Navigator",
+    "headerTitle": "Benefits Navigator",
+    "chat": "Kòmanse pale",
+    "login": "Konekte",
+    "logout": "Dekonekte",
+    "clearChat": "Efase konvèsasyon",
+    "retry": "Eseye ankò",
+    "loginRequired": "Tanpri konekte pou kontinye...",
+    "history": {
+        "chatHistory": "Istwa konvèsasyon",
+        "openChatHistory": "Louvri istwa konvèsasyon",
+        "noHistory": "Pa gen istwa konvèsasyon",
+        "deleteModalTitle": "Efase istwa konvèsasyon",
+        "deleteModalDescription": "Aksyon sa a pa ka anile. Efase istwa konvèsasyon sa a?",
+        "deleteLabel": "Efase",
+        "cancelLabel": "Anile",
+        "today": "Jodi a",
+        "yesterday": "Yè",
+        "last7days": "7 dènye jou yo",
+        "last30days": "30 dènye jou yo"
+    },
+    "upload": {
+        "fileLabel": "Telechaje dosye:",
+        "uploadedFilesLabel": "Dosye ki te telechaje anvan:",
+        "noFilesUploaded": "Pa gen dosye ki telechaje ankò",
+        "loading": "Chajman...",
+        "manageFileUploads": "Jere dosye telechaje yo",
+        "uploadingFiles": "Telechajman dosye yo...",
+        "uploadedFileError": "Erè telechajman dosye - tanpri eseye ankò oswa kontakte administratè a.",
+        "deleteFile": "Efase dosye",
+        "deletingFile": "Efase dosye a...",
+        "errorDeleting": "Erè nan efase.",
+        "fileDeleted": "Dosye efase"
+    },
+    "developerSettings": "Paramèt Developè",
+
+    "chatEmptyStateTitle": "Byenveni nan NYC Benefits Navigator",
+    "chatEmptyStateSubtitle": "Poze kesyon sou benefis sante ak règleman yo",
+    "defaultExamples": {
+        "1": "Ki nivo revni pou benefis an 2025?",
+        "2": "Kijan pou mwen pwouve idantite mwen pou benefis?",
+        "3": "Ki dokiman mwen bezwen pou aplike pou Medicaid?",
+        "placeholder": "Poze kesyon sou benefis, kalifikasyon, oswa dokiman ki nesesè..."
+    },
+    "askTitle": "Poze kesyon sou done ou yo",
+    "multimodalExamples": {
+        "1": "Ki nivo revni pou benefis an 2025?",
+        "2": "Kijan pou mwen pwouve idantite mwen pou benefis?",
+        "3": "Ki dokiman mwen bezwen pou aplike pou Medicaid?",
+        "placeholder": "Poze kesyon sou benefis, kalifikasyon, oswa dokiman ki nesesè..."
+    },
+    "generatingAnswer": "Kreyasyon repons",
+    "citationWithColon": "Sitasyon:",
+    "followupQuestions": "Kesyon swiv:",
+
+    "tooltips": {
+        "submitQuestion": "Soumèt kesyon",
+        "stopStreaming": "Sispann transmisyon",
+        "askWithVoice": "Poze kesyon ak vwa",
+        "stopRecording": "Sispann anrejistreman kesyon",
+        "showThoughtProcess": "Montre pwosesis panse",
+        "showSupportingContent": "Montre kontni sipò",
+        "speakAnswer": "Li repons la",
+        "info": "Enfòmasyon",
+        "save": "Sove",
+        "copy": "Kopye",
+        "copied": "Kopye!"
+    },
+
+    "headerTexts":{
+        "thoughtProcess": "Pwosesis panse",
+        "supportingContent": "Kontni sipò",
+        "citation": "Sitasyon"
+    },
+
+    "labels": {
+        "toggleMenu": "Chanje meni",
+        "languagePicker": "Chwazi lang ou",
+        "headerText": "Konfigire jenerasyon repons",
+        "closeButton": "Fèmen",
+        "promptTemplate": "Ranplase modèl demann",
+        "temperature": "Tanperati",
+        "seed": "Grenn",
+        "minimumSearchScore": "Nòt rechèch minimòm",
+        "minimumRerankerScore": "Nòt re-klasman minimòm",
+        "retrieveCount": "Kantite rezilta rechèch pou rekipere:",
+        "agenticReasoningEffort": "Efò rezonman ajan",
+        "agenticReasoningEffortOptions": {
+            "minimal": "Minimòm",
+            "low": "Ba",
+            "medium": "Mwayen"
+        },
+        "includeCategory": "Enkli kategori",
+        "includeCategoryOptions": {
+            "all": "Tout"
+        },
+        "excludeCategory": "Eskli kategori",
+        "useSemanticRanker": "Sèvi ak klasman semantik",
+        "useSemanticCaptions": "Sèvi ak soutit semantik",
+        "useQueryRewriting": "Sèvi ak re-ekri rechèch",
+        "reasoningEffort": "Efò rezonman",
+        "reasoningEffortOptions": {
+            "minimal": "Minimòm (GPT-5 sèlman)",
+            "low": "Ba",
+            "medium": "Mwayen",
+            "high": "Wo"
+        },
+        "useSuggestFollowupQuestions": "Sijere kesyon swiv",
+        "useAgenticKnowledgeBase": "Sèvi ak rekiperasyon ajan",
+        "useWebSource": "Enkli sous wèb",
+        "useSharePointSource": "Enkli sous SharePoint",
+        "llmInputs": "Sous antre LLM",
+        "llmInputsOptions": {
+            "texts": "Sous tèks",
+            "images": "Sous imaj",
+            "textAndImages": "Sous tèks ak imaj"
+        },
+        "retrievalMode": {
+            "label": "Mòd rekiperasyon",
+            "options": {
+                "hybrid": "Vektè + Tèks (Ibrid)",
+                "vectors": "Vektè",
+                "texts": "Tèks"
+            }
+        },
+        "vector": {
+            "label": "Chan vektè enkli",
+            "options": {
+                "embedding": "Embedding tèks",
+                "imageEmbedding": "Embedding imaj"
+            }
+        },
+        "useOidSecurityFilter": "Sèvi ak filt sekirite OID",
+        "useGroupsSecurityFilter": "Sèvi ak filt sekirite gwoup",
+        "shouldStream": "Transmèt repons konvèsasyon"
+    },
+
+    "helpTexts": {
+        "promptTemplate": "Ranplase demann ki itilize pou kreye repons. Pou ajoute nan demann ki egziste a olye pou ranplase l, kòmanse ak '>>>'.",
+        "temperature": "Mete tanperati a pou demann LLM. Tanperati pi wo pwodui repons ki pi kreyatif.",
+        "seed": "Mete grenn pou repwodiktibilite repons modèl yo.",
+        "searchScore": "Mete nòt minimòm pou rezilta rechèch Azure AI.",
+        "rerankerScore": "Mete nòt minimòm pou re-klasman semantik (0-4).",
+        "retrieveNumber": "Mete kantite rezilta rechèch pou rekipere.",
+        "agenticReasoningEffort": "Kontwole kantite rezonman ajan itilize lè li planifye sou-rechèch yo.",
+        "includeCategory": "Presize kategori pou enkli nan rezilta rechèch yo.",
+        "excludeCategory": "Presize kategori pou eskli nan rezilta rechèch yo.",
+        "useSemanticReranker": "Aktive klasman semantik Azure AI Search.",
+        "useQueryRewriting": "Aktive re-ekri rechèch Azure AI Search.",
+        "reasoningEffort": "Mete efò rezonman pou LLM.",
+        "useSemanticCaptions": "Voye soutit semantik bay LLM olye pou rezilta konplè.",
+        "suggestFollowupQuestions": "Mande LLM pou sijere kesyon swiv.",
+        "textEmbeddings": "Rechèch ap itilize embedding tèks.",
+        "imageEmbeddings": "Rechèch ap itilize embedding miltimòdal.",
+        "llmTextInputs": "Kontni tèks ap voye bay LLM kòm kontèks.",
+        "llmImageInputs": "Imaj yo ap voye bay LLM kòm kontèks.",
+        "retrievalMode": "Mete mòd rekiperasyon pou rechèch Azure AI Search.",
+        "streamChat": "Kontinyèlman transmèt repons bay UI pandan l ap kreye.",
+        "useOidSecurityFilter": "Filtre rezilta ki baze sou OID itilizatè a.",
+        "useGroupsSecurityFilter": "Filtre rezilta ki baze sou gwoup itilizatè a.",
+        "useAgenticKnowledgeBase": "Itilize rekiperasyon ajan pou planifikasyon milti-rechèch.",
+        "useWebSource": "Ogmante rekiperasyon ak rezilta rechèch wèb.",
+        "useSharePointSource": "Ogmante rekiperasyon ak kontni SharePoint."
+    },
+
+    "overallSettings": "Paramèt Jeneral",
+    "searchSettings": "Paramèt Rechèch",
+    "llmSettings": "Paramèt LLM",
+
+    "faq": {
+        "title": "Kesyon yo poze souvan",
+        "askThisQuestion": "Poze kesyon sa a",
+        "categories": {
+            "all": "Tout",
+            "eligibility": "Kalifikasyon",
+            "applying": "Aplikasyon",
+            "afterEnrollment": "Apre Enskripsyon",
+            "benefits": "Benefis",
+            "managedCare": "Swen Jere",
+            "renewals": "Renouvèlman",
+            "changesHelp": "Chanjman ak Èd"
+        },
+        "questions": {
+            "eligibility1": "Ki moun ki kalifye pou Medicaid nan NYC?",
+            "eligibility1Answer": "Medicaid disponib pou rezidan NYC ki satisfè egzijans revni ak gwosè fanmi. Kalifikasyon depann de revni, gwosè fanmi, laj, andikap, gwosès, ak estati imigrasyon.",
+            "eligibility2": "Èske imigran san papye ka jwenn Medicaid?",
+            "eligibility2Answer": "Gen kèk Nouyòkè san papye ki ka kalifye pou Medicaid ijans, Medicaid pou fanm ansent, oswa Essential Plan (19-64 lane). New York ofri tou Medicaid pou granmoun 65+ kèlkeswa estati imigrasyon.",
+            "eligibility3": "Èske gen travay ap fè m pa kalifye pou Medicaid?",
+            "eligibility3Answer": "Non. Anpil moun ak fanmi ki travay kalifye si revni yo pi ba pase limit pwogram nan.",
+            "eligibility4": "Èske pitit mwen yo ka jwenn Medicaid menm si mwen pa kalifye?",
+            "eligibility4Answer": "Wi. Timoun souvan kalifye nan nivo revni ki pi wo pase granmoun.",
+            "applying1": "Kijan pou aplike pou Medicaid nan NYC?",
+            "applying1Answer": "Ou ka aplike sou entènèt nan NY State of Health oswa ACCESS HRA, pa telefòn, pa lapòs, oswa avèk èd yon konseye sètifye.",
+            "applying2": "Ki dokiman mwen bezwen pou aplike?",
+            "applying2Answer": "Anjeneral: prèv idantite, revni (kopi chèk, deklarasyon taks), enfòmasyon fanmi, nimewo sekirite sosyal (si genyen), ak dokiman imigrasyon (si sa aplikab).",
+            "applying3": "Èske mwen ka aplike tout ane a?",
+            "applying3Answer": "Wi. Enskripsyon Medicaid louvri tout ane a.",
+            "applying4": "Konbyen tan li pran pou jwenn apwobasyon?",
+            "applying4Answer": "Pifò aplikasyon trete nan 30-45 jou. Ka ijans ak fanm ansent ka pi vit.",
+            "afterEnrollment1": "Ki lè asirans mwen kòmanse?",
+            "afterEnrollment1Answer": "Asirans souvan kòmanse premye jou nan mwa ou te aplike a.",
+            "afterEnrollment2": "Èske m ap resevwa yon kat Medicaid?",
+            "afterEnrollment2Answer": "Wi. Ou pral resevwa kat NYS Medicaid ou ak enfòmasyon sou plan sante ou.",
+            "afterEnrollment3": "E si mwen pa janm resevwa kat Medicaid mwen?",
+            "afterEnrollment3Answer": "Kontakte NY State of Health oswa NYC HRA pou mande yon ranplasman.",
+            "benefits1": "Ki sa Medicaid kouvri?",
+            "benefits1Answer": "Medicaid kouvri vizit doktè, swen lopital, sèvis ijans, preskripsyon, sante mantal, dan, vizyon, swen matènite, ak sèvis prevantif.",
+            "benefits2": "Èske Medicaid kouvri dan ak vizyon?",
+            "benefits2Answer": "Wi, enkli egzamen, netwayaj, linèt, ak kèk pwosedi.",
+            "benefits3": "Èske Medicaid ka peye bòdwo medikal anvan mwen enskri?",
+            "benefits3Answer": "Wi. Medicaid ka kouvri sèvis jiska 90 jou anvan aplikasyon ou si ou te kalifye.",
+            "managedCare1": "Ki sa ki yon plan swen jere Medicaid?",
+            "managedCare1Answer": "Yon plan asirans sante ki jere swen ou ak rezo founisè yo.",
+            "managedCare2": "Èske mwen dwe chwazi yon plan?",
+            "managedCare2Answer": "Wi. Si ou pa chwazi, yo ka asiyen youn pou ou.",
+            "managedCare3": "Èske mwen ka chanje plan mwen?",
+            "managedCare3Answer": "Wi. Nan pifò ka, ou ka chanje plan nenpòt lè.",
+            "renewals1": "Èske mwen bezwen renouvle Medicaid chak ane?",
+            "renewals1Answer": "Wi. Ou dwe konplete yon renouvèlman anyèl.",
+            "renewals2": "Ki sa k ap pase si mwen rate renouvèlman mwen?",
+            "renewals2Answer": "Asirans ou ka fini. Ou ka bezwen re-aplike.",
+            "renewals3": "Mwen pa t resevwa avi renouvèlman — kisa pou m fè?",
+            "renewals3Answer": "Konekte nan kont ou oswa kontakte NYC HRA imedyatman.",
+            "changesHelp1": "Ki chanjman mwen bezwen rapòte?",
+            "changesHelp1Answer": "Revni, adrès, gwosè fanmi, gwosès, oswa nouvo asirans.",
+            "changesHelp2": "Èske m ap pèdi Medicaid si revni mwen ogmante?",
+            "changesHelp2Answer": "Pa nesesèman. Yo ka transfere ou nan yon lòt plan ki pa chè.",
+            "changesHelp3": "Yo te refize aplikasyon mwen — kisa pou m fè?",
+            "changesHelp3Answer": "Ou ka fè yon apèl oswa mande yon odyans jis.",
+            "changesHelp4": "Ki kote mwen ka jwenn èd pou enskri?",
+            "changesHelp4Answer": "Konseye NYC, sant sante kominotè, ak lopital ofri èd gratis.",
+            "changesHelp5": "Èske yon moun ka ede mwen nan lang mwen?",
+            "changesHelp5Answer": "Wi. Sèvis entèpretasyon disponib nan plizyè lang."
+        }
+    }
+}

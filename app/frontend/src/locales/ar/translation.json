@@ -1,0 +1,237 @@
+{
+    "pageTitle": "NYC Benefits Navigator",
+    "headerTitle": "Benefits Navigator",
+    "chat": "محادثة",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "clearChat": "مسح المحادثة",
+    "retry": "إعادة المحاولة",
+    "loginRequired": "يرجى تسجيل الدخول للمتابعة...",
+    "history": {
+        "chatHistory": "سجل المحادثات",
+        "openChatHistory": "فتح سجل المحادثات",
+        "noHistory": "لا يوجد سجل محادثات",
+        "deleteModalTitle": "حذف سجل المحادثة",
+        "deleteModalDescription": "لا يمكن التراجع عن هذا الإجراء. هل تريد حذف سجل المحادثة هذا؟",
+        "deleteLabel": "حذف",
+        "cancelLabel": "إلغاء",
+        "today": "اليوم",
+        "yesterday": "أمس",
+        "last7days": "آخر 7 أيام",
+        "last30days": "آخر 30 يوماً"
+    },
+    "upload": {
+        "fileLabel": "رفع ملف:",
+        "uploadedFilesLabel": "الملفات المرفوعة سابقاً:",
+        "noFilesUploaded": "لم يتم رفع أي ملفات بعد",
+        "loading": "جاري التحميل...",
+        "manageFileUploads": "إدارة رفع الملفات",
+        "uploadingFiles": "جاري رفع الملفات...",
+        "uploadedFileError": "خطأ في رفع الملف - يرجى المحاولة مرة أخرى أو التواصل مع المسؤول.",
+        "deleteFile": "حذف الملف",
+        "deletingFile": "جاري حذف الملف...",
+        "errorDeleting": "خطأ في الحذف.",
+        "fileDeleted": "تم حذف الملف"
+    },
+    "developerSettings": "إعدادات المطور",
+
+    "chatEmptyStateTitle": "مرحباً بكم في NYC Benefits Navigator",
+    "chatEmptyStateSubtitle": "اطرح أسئلة حول المزايا الصحية واللوائح",
+    "defaultExamples": {
+        "1": "ما هي مستويات الدخل للتأهل للمزايا في 2025؟",
+        "2": "كيف أثبت هويتي للحصول على المزايا؟",
+        "3": "ما هي المستندات المطلوبة للتقدم لـ Medicaid؟",
+        "placeholder": "اسأل عن المزايا والأهلية أو المستندات المطلوبة..."
+    },
+    "askTitle": "اسأل عن بياناتك",
+    "multimodalExamples": {
+        "1": "ما هي مستويات الدخل للتأهل للمزايا في 2025؟",
+        "2": "كيف أثبت هويتي للحصول على المزايا؟",
+        "3": "ما هي المستندات المطلوبة للتقدم لـ Medicaid؟",
+        "placeholder": "اسأل عن المزايا والأهلية أو المستندات المطلوبة..."
+    },
+    "generatingAnswer": "جاري إنشاء الإجابة",
+    "citationWithColon": "الاستشهاد:",
+    "followupQuestions": "أسئلة المتابعة:",
+
+    "tooltips": {
+        "submitQuestion": "إرسال السؤال",
+        "stopStreaming": "إيقاف البث",
+        "askWithVoice": "اسأل بالصوت",
+        "stopRecording": "إيقاف تسجيل السؤال",
+        "showThoughtProcess": "عرض عملية التفكير",
+        "showSupportingContent": "عرض المحتوى الداعم",
+        "speakAnswer": "نطق الإجابة",
+        "info": "معلومات",
+        "save": "حفظ",
+        "copy": "نسخ",
+        "copied": "تم النسخ!"
+    },
+
+    "headerTexts":{
+        "thoughtProcess": "عملية التفكير",
+        "supportingContent": "المحتوى الداعم",
+        "citation": "الاستشهاد"
+    },
+
+    "labels": {
+        "toggleMenu": "تبديل القائمة",
+        "languagePicker": "اختر لغتك",
+        "headerText": "تكوين إنشاء الإجابة",
+        "closeButton": "إغلاق",
+        "promptTemplate": "تجاوز قالب المطالبة",
+        "temperature": "درجة الحرارة",
+        "seed": "البذرة",
+        "minimumSearchScore": "الحد الأدنى لنقاط البحث",
+        "minimumRerankerScore": "الحد الأدنى لنقاط إعادة الترتيب",
+        "retrieveCount": "عدد نتائج البحث للاسترداد:",
+        "agenticReasoningEffort": "جهد الاستدلال الوكيل",
+        "agenticReasoningEffortOptions": {
+            "minimal": "الحد الأدنى",
+            "low": "منخفض",
+            "medium": "متوسط"
+        },
+        "includeCategory": "تضمين الفئة",
+        "includeCategoryOptions": {
+            "all": "الكل"
+        },
+        "excludeCategory": "استبعاد الفئة",
+        "useSemanticRanker": "استخدام المرتب الدلالي",
+        "useSemanticCaptions": "استخدام التسميات التوضيحية الدلالية",
+        "useQueryRewriting": "استخدام إعادة كتابة الاستعلام",
+        "reasoningEffort": "جهد الاستدلال",
+        "reasoningEffortOptions": {
+            "minimal": "الحد الأدنى (GPT-5 فقط)",
+            "low": "منخفض",
+            "medium": "متوسط",
+            "high": "مرتفع"
+        },
+        "useSuggestFollowupQuestions": "اقتراح أسئلة المتابعة",
+        "useAgenticKnowledgeBase": "استخدام الاسترداد الوكيل",
+        "useWebSource": "تضمين مصدر الويب",
+        "useSharePointSource": "تضمين مصدر SharePoint",
+        "llmInputs": "مصادر إدخال LLM",
+        "llmInputsOptions": {
+            "texts": "مصادر نصية",
+            "images": "مصادر صور",
+            "textAndImages": "مصادر نصية وصور"
+        },
+        "retrievalMode": {
+            "label": "وضع الاسترداد",
+            "options": {
+                "hybrid": "متجه + نص (هجين)",
+                "vectors": "متجهات",
+                "texts": "نص"
+            }
+        },
+        "vector": {
+            "label": "حقول المتجهات المضمنة",
+            "options": {
+                "embedding": "تضمين النص",
+                "imageEmbedding": "تضمين الصورة"
+            }
+        },
+        "useOidSecurityFilter": "استخدام فلتر أمان OID",
+        "useGroupsSecurityFilter": "استخدام فلتر أمان المجموعات",
+        "shouldStream": "بث استجابات المحادثة"
+    },
+
+    "helpTexts": {
+        "promptTemplate": "يتجاوز المطالبة المستخدمة لإنشاء الإجابات. للإضافة إلى المطالبة الموجودة بدلاً من استبدالها، ابدأ بـ '>>>'.",
+        "temperature": "يحدد درجة الحرارة لطلبات LLM. درجات الحرارة الأعلى تنتج استجابات أكثر إبداعاً.",
+        "seed": "يحدد البذرة لإمكانية تكرار استجابات النموذج.",
+        "searchScore": "يحدد الحد الأدنى للنقاط لنتائج بحث Azure AI.",
+        "rerankerScore": "يحدد الحد الأدنى للنقاط لإعادة الترتيب الدلالي (0-4).",
+        "retrieveNumber": "يحدد عدد نتائج البحث للاسترداد.",
+        "agenticReasoningEffort": "يتحكم في مقدار الاستدلال الذي يستخدمه الوكيل عند تخطيط الاستعلامات الفرعية.",
+        "includeCategory": "يحدد الفئة لتضمينها في نتائج البحث.",
+        "excludeCategory": "يحدد الفئة لاستبعادها من نتائج البحث.",
+        "useSemanticReranker": "يفعّل المرتب الدلالي لـ Azure AI Search.",
+        "useQueryRewriting": "يفعّل إعادة كتابة الاستعلام في Azure AI Search.",
+        "reasoningEffort": "يحدد جهد الاستدلال لـ LLM.",
+        "useSemanticCaptions": "يرسل التسميات التوضيحية الدلالية إلى LLM بدلاً من النتائج الكاملة.",
+        "suggestFollowupQuestions": "يطلب من LLM اقتراح أسئلة متابعة.",
+        "textEmbeddings": "سيستخدم البحث تضمينات النص.",
+        "imageEmbeddings": "سيستخدم البحث التضمينات متعددة الوسائط.",
+        "llmTextInputs": "سيتم إرسال محتوى النص إلى LLM كسياق.",
+        "llmImageInputs": "سيتم إرسال الصور إلى LLM كسياق.",
+        "retrievalMode": "يحدد وضع الاسترداد لاستعلام Azure AI Search.",
+        "streamChat": "يبث الاستجابات باستمرار إلى واجهة المستخدم أثناء إنشائها.",
+        "useOidSecurityFilter": "يفلتر النتائج بناءً على OID المستخدم.",
+        "useGroupsSecurityFilter": "يفلتر النتائج بناءً على مجموعات المستخدم.",
+        "useAgenticKnowledgeBase": "يستخدم الاسترداد الوكيل لتخطيط الاستعلامات المتعددة.",
+        "useWebSource": "يعزز الاسترداد بنتائج بحث الويب.",
+        "useSharePointSource": "يعزز الاسترداد بمحتوى SharePoint."
+    },
+
+    "overallSettings": "الإعدادات العامة",
+    "searchSettings": "إعدادات البحث",
+    "llmSettings": "إعدادات LLM",
+
+    "faq": {
+        "title": "الأسئلة الشائعة",
+        "askThisQuestion": "اطرح هذا السؤال",
+        "categories": {
+            "all": "الكل",
+            "eligibility": "الأهلية",
+            "applying": "التقديم",
+            "afterEnrollment": "بعد التسجيل",
+            "benefits": "المزايا",
+            "managedCare": "الرعاية المدارة",
+            "renewals": "التجديدات",
+            "changesHelp": "التغييرات والمساعدة"
+        },
+        "questions": {
+            "eligibility1": "من هو المؤهل لـ Medicaid في مدينة نيويورك؟",
+            "eligibility1Answer": "Medicaid متاح لسكان مدينة نيويورك الذين يستوفون متطلبات الدخل وحجم الأسرة. تعتمد الأهلية على الدخل وحجم الأسرة والعمر والإعاقة والحمل وحالة الهجرة.",
+            "eligibility2": "هل يمكن للمهاجرين غير الموثقين الحصول على Medicaid؟",
+            "eligibility2Answer": "قد يكون بعض سكان نيويورك غير الموثقين مؤهلين لـ Medicaid الطوارئ أو Medicaid للحوامل أو Essential Plan (19-64 سنة). تقدم نيويورك أيضاً Medicaid للبالغين 65+ بغض النظر عن حالة الهجرة.",
+            "eligibility3": "هل العمل يجعلني غير مؤهل لـ Medicaid؟",
+            "eligibility3Answer": "لا. العديد من الأفراد والعائلات العاملين مؤهلون إذا كان الدخل أقل من حدود البرنامج.",
+            "eligibility4": "هل يمكن لأطفالي الحصول على Medicaid حتى لو لم أكن مؤهلاً؟",
+            "eligibility4Answer": "نعم. غالباً ما يكون الأطفال مؤهلين عند مستويات دخل أعلى من البالغين.",
+            "applying1": "كيف أتقدم لـ Medicaid في مدينة نيويورك؟",
+            "applying1Answer": "يمكنك التقديم عبر الإنترنت في NY State of Health أو ACCESS HRA، عبر الهاتف، بالبريد، أو بمساعدة مستشار معتمد.",
+            "applying2": "ما هي المستندات المطلوبة للتقديم؟",
+            "applying2Answer": "عادةً: إثبات الهوية، الدخل (كشوف الرواتب، الإقرارات الضريبية)، معلومات الأسرة، رقم الضمان الاجتماعي (إن وجد)، ومستندات الهجرة (إن وجدت).",
+            "applying3": "هل يمكنني التقديم في أي وقت من السنة؟",
+            "applying3Answer": "نعم. التسجيل في Medicaid مفتوح طوال العام.",
+            "applying4": "كم من الوقت يستغرق الحصول على الموافقة؟",
+            "applying4Answer": "معظم الطلبات تتم معالجتها خلال 30-45 يوماً. الحوامل والحالات الطارئة قد تكون أسرع.",
+            "afterEnrollment1": "متى يبدأ تأميني؟",
+            "afterEnrollment1Answer": "يبدأ التأمين عادةً من اليوم الأول من الشهر الذي تقدمت فيه.",
+            "afterEnrollment2": "هل سأحصل على بطاقة Medicaid؟",
+            "afterEnrollment2Answer": "نعم. ستتلقى بطاقة NYS Medicaid ومعلومات عن خطتك الصحية.",
+            "afterEnrollment3": "ماذا لو لم أستلم بطاقة Medicaid الخاصة بي؟",
+            "afterEnrollment3Answer": "تواصل مع NY State of Health أو NYC HRA لطلب بديل.",
+            "benefits1": "ماذا يغطي Medicaid؟",
+            "benefits1Answer": "يغطي Medicaid زيارات الطبيب، رعاية المستشفى، خدمات الطوارئ، الأدوية الموصوفة، الصحة النفسية، الأسنان، الرؤية، رعاية الأمومة، والخدمات الوقائية.",
+            "benefits2": "هل يغطي Medicaid الأسنان والرؤية؟",
+            "benefits2Answer": "نعم، بما في ذلك الفحوصات والتنظيف والنظارات وبعض الإجراءات.",
+            "benefits3": "هل يمكن لـ Medicaid دفع الفواتير الطبية من قبل تسجيلي؟",
+            "benefits3Answer": "نعم. يمكن لـ Medicaid تغطية الخدمات حتى 90 يوماً قبل طلبك إذا كنت مؤهلاً.",
+            "managedCare1": "ما هي خطة Medicaid للرعاية المدارة؟",
+            "managedCare1Answer": "خطة تأمين صحي تدير رعايتك وشبكة مقدمي الخدمات.",
+            "managedCare2": "هل يجب أن أختار خطة؟",
+            "managedCare2Answer": "نعم. إذا لم تختر، قد يتم تعيين واحدة لك.",
+            "managedCare3": "هل يمكنني تغيير خطتي؟",
+            "managedCare3Answer": "نعم. في معظم الحالات يمكنك تغيير الخطط في أي وقت.",
+            "renewals1": "هل أحتاج لتجديد Medicaid كل عام؟",
+            "renewals1Answer": "نعم. يجب إكمال التجديد السنوي.",
+            "renewals2": "ماذا يحدث إذا فاتني التجديد؟",
+            "renewals2Answer": "قد ينتهي تأمينك. قد تحتاج لإعادة التقديم.",
+            "renewals3": "لم أستلم إشعار التجديد — ماذا أفعل؟",
+            "renewals3Answer": "سجّل الدخول إلى حسابك أو تواصل مع NYC HRA فوراً.",
+            "changesHelp1": "ما التغييرات التي يجب الإبلاغ عنها؟",
+            "changesHelp1Answer": "الدخل، العنوان، حجم الأسرة، الحمل، أو تأمين جديد.",
+            "changesHelp2": "هل سأفقد Medicaid إذا زاد دخلي؟",
+            "changesHelp2Answer": "ليس بالضرورة. قد يتم نقلك إلى خطة أخرى منخفضة التكلفة.",
+            "changesHelp3": "تم رفض طلبي — ماذا أفعل؟",
+            "changesHelp3Answer": "يمكنك تقديم استئناف أو طلب جلسة استماع عادلة.",
+            "changesHelp4": "أين يمكنني الحصول على مساعدة في التسجيل؟",
+            "changesHelp4Answer": "مستشارو NYC ومراكز الصحة المجتمعية والمستشفيات تقدم مساعدة مجانية.",
+            "changesHelp5": "هل يمكن لشخص مساعدتي بلغتي؟",
+            "changesHelp5Answer": "نعم. خدمات الترجمة متاحة بعدة لغات."
+        }
+    }
+}

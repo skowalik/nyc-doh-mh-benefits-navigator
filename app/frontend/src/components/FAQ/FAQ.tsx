@@ -54,9 +54,7 @@ export const FAQ = ({ onQuestionClick }: Props) => {
     const [activeCategory, setActiveCategory] = useState("all");
     const [openItems, setOpenItems] = useState<Set<number>>(new Set());
 
-    const filteredFAQs = activeCategory === "all" 
-        ? FAQ_DATA 
-        : FAQ_DATA.filter(item => item.categoryKey === activeCategory);
+    const filteredFAQs = activeCategory === "all" ? FAQ_DATA : FAQ_DATA.filter(item => item.categoryKey === activeCategory);
 
     const toggleItem = (index: number) => {
         const newOpenItems = new Set(openItems);
@@ -71,7 +69,7 @@ export const FAQ = ({ onQuestionClick }: Props) => {
     return (
         <div className={styles.faqContainer}>
             <h2 className={styles.faqTitle}>{t("faq.title")}</h2>
-            
+
             <div className={styles.faqCategories}>
                 {CATEGORY_KEYS.map(categoryKey => (
                     <button
@@ -90,25 +88,17 @@ export const FAQ = ({ onQuestionClick }: Props) => {
                     const isOpen = openItems.has(globalIndex);
                     const question = t(`faq.questions.${item.questionKey}`);
                     const answer = t(`faq.questions.${item.answerKey}`);
-                    
+
                     return (
                         <div key={globalIndex} className={styles.faqItem}>
-                            <button 
-                                className={styles.faqQuestion}
-                                onClick={() => toggleItem(globalIndex)}
-                            >
+                            <button className={styles.faqQuestion} onClick={() => toggleItem(globalIndex)}>
                                 <span>{question}</span>
-                                <span className={`${styles.faqIcon} ${isOpen ? styles.faqIconOpen : ""}`}>
-                                    ▼
-                                </span>
+                                <span className={`${styles.faqIcon} ${isOpen ? styles.faqIconOpen : ""}`}>▼</span>
                             </button>
                             {isOpen && (
                                 <div className={styles.faqAnswer}>
                                     <p>{answer}</p>
-                                    <button 
-                                        className={styles.askButton}
-                                        onClick={() => onQuestionClick(question)}
-                                    >
+                                    <button className={styles.askButton} onClick={() => onQuestionClick(question)}>
                                         {t("faq.askThisQuestion")}
                                     </button>
                                 </div>

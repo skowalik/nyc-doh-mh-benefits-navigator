@@ -1,10 +1,15 @@
 import i18next from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import HttpApi from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
 import enTranslation from "../locales/en/translation.json";
 import esTranslation from "../locales/es/translation.json";
+import zhTranslation from "../locales/zh/translation.json";
+import ruTranslation from "../locales/ru/translation.json";
+import htTranslation from "../locales/ht/translation.json";
+import bnTranslation from "../locales/bn/translation.json";
+import koTranslation from "../locales/ko/translation.json";
+import yiTranslation from "../locales/yi/translation.json";
+import arTranslation from "../locales/ar/translation.json";
 import plTranslation from "../locales/pl/translation.json";
 
 export const supportedLngs: { [key: string]: { name: string; locale: string; nativeName: string } } = {
@@ -60,31 +65,26 @@ export const supportedLngs: { [key: string]: { name: string; locale: string; nat
     }
 };
 
-i18next
-    .use(HttpApi)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    // init i18next
-    // for all options read: https://www.i18next.com/overview/configuration-options
-    .init({
-        resources: {
-            en: { translation: enTranslation },
-            es: { translation: esTranslation },
-            zh: { translation: enTranslation }, // Fallback to English until translation added
-            ru: { translation: enTranslation }, // Fallback to English until translation added
-            ht: { translation: enTranslation }, // Fallback to English until translation added
-            bn: { translation: enTranslation }, // Fallback to English until translation added
-            ko: { translation: enTranslation }, // Fallback to English until translation added
-            yi: { translation: enTranslation }, // Fallback to English until translation added
-            ar: { translation: enTranslation }, // Fallback to English until translation added
-            pl: { translation: plTranslation }
-        },
-        fallbackLng: "en",
-        supportedLngs: Object.keys(supportedLngs),
-        debug: import.meta.env.DEV,
-        interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
-        }
-    });
+i18next.use(initReactI18next).init({
+    resources: {
+        en: { translation: enTranslation },
+        es: { translation: esTranslation },
+        zh: { translation: zhTranslation },
+        ru: { translation: ruTranslation },
+        ht: { translation: htTranslation },
+        bn: { translation: bnTranslation },
+        ko: { translation: koTranslation },
+        yi: { translation: yiTranslation },
+        ar: { translation: arTranslation },
+        pl: { translation: plTranslation }
+    },
+    lng: "en", // Always default to English
+    fallbackLng: "en",
+    supportedLngs: Object.keys(supportedLngs),
+    debug: import.meta.env.DEV,
+    interpolation: {
+        escapeValue: false // not needed for react as it escapes by default
+    }
+});
 
 export default i18next;

@@ -1,0 +1,237 @@
+{
+    "pageTitle": "NYC Benefits Navigator",
+    "headerTitle": "Benefits Navigator",
+    "chat": "채팅",
+    "login": "로그인",
+    "logout": "로그아웃",
+    "clearChat": "채팅 지우기",
+    "retry": "다시 시도",
+    "loginRequired": "계속하려면 로그인하세요...",
+    "history": {
+        "chatHistory": "채팅 기록",
+        "openChatHistory": "채팅 기록 열기",
+        "noHistory": "채팅 기록 없음",
+        "deleteModalTitle": "채팅 기록 삭제",
+        "deleteModalDescription": "이 작업은 취소할 수 없습니다. 이 채팅 기록을 삭제하시겠습니까?",
+        "deleteLabel": "삭제",
+        "cancelLabel": "취소",
+        "today": "오늘",
+        "yesterday": "어제",
+        "last7days": "지난 7일",
+        "last30days": "지난 30일"
+    },
+    "upload": {
+        "fileLabel": "파일 업로드:",
+        "uploadedFilesLabel": "이전에 업로드된 파일:",
+        "noFilesUploaded": "아직 업로드된 파일 없음",
+        "loading": "로딩 중...",
+        "manageFileUploads": "파일 업로드 관리",
+        "uploadingFiles": "파일 업로드 중...",
+        "uploadedFileError": "파일 업로드 오류 - 다시 시도하거나 관리자에게 문의하세요.",
+        "deleteFile": "파일 삭제",
+        "deletingFile": "파일 삭제 중...",
+        "errorDeleting": "삭제 오류.",
+        "fileDeleted": "파일 삭제됨"
+    },
+    "developerSettings": "개발자 설정",
+
+    "chatEmptyStateTitle": "NYC 혜택 네비게이터에 오신 것을 환영합니다",
+    "chatEmptyStateSubtitle": "건강 혜택 및 규정에 대해 질문하세요",
+    "defaultExamples": {
+        "1": "2025년 혜택 자격을 위한 소득 수준은 무엇입니까?",
+        "2": "혜택을 위해 신원을 어떻게 증명합니까?",
+        "3": "메디케이드 신청에 필요한 서류는 무엇입니까?",
+        "placeholder": "혜택, 자격 또는 필요한 서류에 대해 질문하세요..."
+    },
+    "askTitle": "데이터에 대해 질문하기",
+    "multimodalExamples": {
+        "1": "2025년 혜택 자격을 위한 소득 수준은 무엇입니까?",
+        "2": "혜택을 위해 신원을 어떻게 증명합니까?",
+        "3": "메디케이드 신청에 필요한 서류는 무엇입니까?",
+        "placeholder": "혜택, 자격 또는 필요한 서류에 대해 질문하세요..."
+    },
+    "generatingAnswer": "답변 생성 중",
+    "citationWithColon": "인용:",
+    "followupQuestions": "후속 질문:",
+
+    "tooltips": {
+        "submitQuestion": "질문 제출",
+        "stopStreaming": "스트리밍 중지",
+        "askWithVoice": "음성으로 질문",
+        "stopRecording": "질문 녹음 중지",
+        "showThoughtProcess": "사고 과정 보기",
+        "showSupportingContent": "지원 콘텐츠 보기",
+        "speakAnswer": "답변 읽기",
+        "info": "정보",
+        "save": "저장",
+        "copy": "복사",
+        "copied": "복사됨!"
+    },
+
+    "headerTexts":{
+        "thoughtProcess": "사고 과정",
+        "supportingContent": "지원 콘텐츠",
+        "citation": "인용"
+    },
+
+    "labels": {
+        "toggleMenu": "메뉴 토글",
+        "languagePicker": "언어 선택",
+        "headerText": "답변 생성 구성",
+        "closeButton": "닫기",
+        "promptTemplate": "프롬프트 템플릿 재정의",
+        "temperature": "온도",
+        "seed": "시드",
+        "minimumSearchScore": "최소 검색 점수",
+        "minimumRerankerScore": "최소 리랭커 점수",
+        "retrieveCount": "검색 결과 수:",
+        "agenticReasoningEffort": "에이전트 추론 노력",
+        "agenticReasoningEffortOptions": {
+            "minimal": "최소",
+            "low": "낮음",
+            "medium": "중간"
+        },
+        "includeCategory": "카테고리 포함",
+        "includeCategoryOptions": {
+            "all": "전체"
+        },
+        "excludeCategory": "카테고리 제외",
+        "useSemanticRanker": "시맨틱 랭커 사용",
+        "useSemanticCaptions": "시맨틱 캡션 사용",
+        "useQueryRewriting": "쿼리 재작성 사용",
+        "reasoningEffort": "추론 노력",
+        "reasoningEffortOptions": {
+            "minimal": "최소 (GPT-5만)",
+            "low": "낮음",
+            "medium": "중간",
+            "high": "높음"
+        },
+        "useSuggestFollowupQuestions": "후속 질문 제안",
+        "useAgenticKnowledgeBase": "에이전트 검색 사용",
+        "useWebSource": "웹 소스 포함",
+        "useSharePointSource": "SharePoint 소스 포함",
+        "llmInputs": "LLM 입력 소스",
+        "llmInputsOptions": {
+            "texts": "텍스트 소스",
+            "images": "이미지 소스",
+            "textAndImages": "텍스트 및 이미지 소스"
+        },
+        "retrievalMode": {
+            "label": "검색 모드",
+            "options": {
+                "hybrid": "벡터 + 텍스트 (하이브리드)",
+                "vectors": "벡터",
+                "texts": "텍스트"
+            }
+        },
+        "vector": {
+            "label": "포함된 벡터 필드",
+            "options": {
+                "embedding": "텍스트 임베딩",
+                "imageEmbedding": "이미지 임베딩"
+            }
+        },
+        "useOidSecurityFilter": "OID 보안 필터 사용",
+        "useGroupsSecurityFilter": "그룹 보안 필터 사용",
+        "shouldStream": "채팅 응답 스트리밍"
+    },
+
+    "helpTexts": {
+        "promptTemplate": "답변 생성에 사용되는 프롬프트를 재정의합니다. 기존 프롬프트에 추가하려면 '>>>'로 시작하세요.",
+        "temperature": "LLM 요청의 온도를 설정합니다. 높은 온도는 더 창의적인 응답을 생성합니다.",
+        "seed": "모델 응답의 재현성을 위해 시드를 설정합니다.",
+        "searchScore": "Azure AI 검색 결과의 최소 점수를 설정합니다.",
+        "rerankerScore": "시맨틱 리랭커의 최소 점수를 설정합니다 (0-4).",
+        "retrieveNumber": "검색할 결과 수를 설정합니다.",
+        "agenticReasoningEffort": "하위 쿼리 계획 시 에이전트가 사용하는 추론 양을 제어합니다.",
+        "includeCategory": "검색 결과에 포함할 카테고리를 지정합니다.",
+        "excludeCategory": "검색 결과에서 제외할 카테고리를 지정합니다.",
+        "useSemanticReranker": "Azure AI 검색 시맨틱 랭커를 활성화합니다.",
+        "useQueryRewriting": "Azure AI 검색 쿼리 재작성을 활성화합니다.",
+        "reasoningEffort": "LLM의 추론 노력을 설정합니다.",
+        "useSemanticCaptions": "전체 결과 대신 시맨틱 캡션을 LLM에 보냅니다.",
+        "suggestFollowupQuestions": "LLM에게 후속 질문을 제안하도록 요청합니다.",
+        "textEmbeddings": "검색에서 텍스트 임베딩을 사용합니다.",
+        "imageEmbeddings": "검색에서 멀티모달 임베딩을 사용합니다.",
+        "llmTextInputs": "텍스트 콘텐츠가 컨텍스트로 LLM에 전송됩니다.",
+        "llmImageInputs": "이미지가 컨텍스트로 LLM에 전송됩니다.",
+        "retrievalMode": "Azure AI 검색 쿼리의 검색 모드를 설정합니다.",
+        "streamChat": "생성되는 대로 UI에 응답을 지속적으로 스트리밍합니다.",
+        "useOidSecurityFilter": "사용자의 OID를 기반으로 결과를 필터링합니다.",
+        "useGroupsSecurityFilter": "사용자의 그룹을 기반으로 결과를 필터링합니다.",
+        "useAgenticKnowledgeBase": "다중 쿼리 계획에 에이전트 검색을 사용합니다.",
+        "useWebSource": "웹 검색 결과로 검색을 보강합니다.",
+        "useSharePointSource": "SharePoint 콘텐츠로 검색을 보강합니다."
+    },
+
+    "overallSettings": "전체 설정",
+    "searchSettings": "검색 설정",
+    "llmSettings": "LLM 설정",
+
+    "faq": {
+        "title": "자주 묻는 질문",
+        "askThisQuestion": "이 질문하기",
+        "categories": {
+            "all": "전체",
+            "eligibility": "자격",
+            "applying": "신청",
+            "afterEnrollment": "등록 후",
+            "benefits": "혜택",
+            "managedCare": "관리 의료",
+            "renewals": "갱신",
+            "changesHelp": "변경 및 도움"
+        },
+        "questions": {
+            "eligibility1": "NYC에서 메디케이드 자격이 있는 사람은 누구입니까?",
+            "eligibility1Answer": "메디케이드는 소득 및 가구 규모 요건을 충족하는 NYC 거주자에게 제공됩니다. 자격은 소득, 가구 규모, 나이, 장애, 임신 및 이민 상태에 따라 다릅니다.",
+            "eligibility2": "미등록 이민자도 메디케이드를 받을 수 있습니까?",
+            "eligibility2Answer": "일부 미등록 뉴요커는 응급 메디케이드, 임산부 메디케이드 또는 에센셜 플랜(19-64세)을 받을 자격이 있을 수 있습니다. 뉴욕은 또한 이민 상태에 관계없이 65세 이상 성인에게 메디케이드를 제공합니다.",
+            "eligibility3": "직장이 있으면 메디케이드 자격을 잃게 되나요?",
+            "eligibility3Answer": "아니요. 소득이 프로그램 한도 미만인 많은 취업자와 가족이 자격이 있습니다.",
+            "eligibility4": "제가 자격이 없어도 아이들은 메디케이드를 받을 수 있나요?",
+            "eligibility4Answer": "예. 아동은 종종 성인보다 높은 소득 수준에서 자격이 있습니다.",
+            "applying1": "NYC에서 메디케이드를 어떻게 신청하나요?",
+            "applying1Answer": "NY State of Health 또는 ACCESS HRA에서 온라인으로, 전화로, 우편으로, 또는 공인 상담사의 도움을 받아 신청할 수 있습니다.",
+            "applying2": "신청에 어떤 서류가 필요합니까?",
+            "applying2Answer": "일반적으로: 신분 증명, 소득(급여 명세서, 세금 신고서), 가족 정보, 사회보장번호(있는 경우), 이민 서류(해당되는 경우).",
+            "applying3": "연중 언제든지 신청할 수 있나요?",
+            "applying3Answer": "예. 메디케이드 등록은 연중 열려 있습니다.",
+            "applying4": "승인되는 데 얼마나 걸리나요?",
+            "applying4Answer": "대부분의 신청은 30-45일 이내에 처리됩니다. 임산부와 응급 상황은 더 빠를 수 있습니다.",
+            "afterEnrollment1": "보험은 언제 시작되나요?",
+            "afterEnrollment1Answer": "보험은 일반적으로 신청한 달의 첫째 날부터 시작됩니다.",
+            "afterEnrollment2": "메디케이드 카드를 받게 되나요?",
+            "afterEnrollment2Answer": "예. NYS 메디케이드 카드와 건강 플랜 정보를 받게 됩니다.",
+            "afterEnrollment3": "메디케이드 카드를 못 받으면 어떻게 하나요?",
+            "afterEnrollment3Answer": "재발급을 요청하려면 NY State of Health 또는 NYC HRA에 연락하세요.",
+            "benefits1": "메디케이드는 무엇을 보장하나요?",
+            "benefits1Answer": "메디케이드는 의사 방문, 입원 치료, 응급 서비스, 처방약, 정신 건강, 치과, 시력, 산부인과 치료 및 예방 서비스를 보장합니다.",
+            "benefits2": "메디케이드는 치과와 시력을 보장하나요?",
+            "benefits2Answer": "예, 검진, 클리닝, 안경 및 일부 시술을 포함합니다.",
+            "benefits3": "메디케이드가 등록 전 의료비를 지불할 수 있나요?",
+            "benefits3Answer": "예. 자격이 있었다면 메디케이드가 신청 전 90일까지의 서비스를 보장할 수 있습니다.",
+            "managedCare1": "메디케이드 관리 의료 플랜이란 무엇입니까?",
+            "managedCare1Answer": "귀하의 진료와 제공자 네트워크를 관리하는 건강 보험 플랜입니다.",
+            "managedCare2": "플랜을 선택해야 하나요?",
+            "managedCare2Answer": "예. 선택하지 않으면 자동으로 배정될 수 있습니다.",
+            "managedCare3": "플랜을 변경할 수 있나요?",
+            "managedCare3Answer": "예. 대부분의 경우 언제든지 플랜을 변경할 수 있습니다.",
+            "renewals1": "매년 메디케이드를 갱신해야 하나요?",
+            "renewals1Answer": "예. 연간 갱신을 완료해야 합니다.",
+            "renewals2": "갱신을 놓치면 어떻게 되나요?",
+            "renewals2Answer": "보험이 종료될 수 있습니다. 다시 신청해야 할 수 있습니다.",
+            "renewals3": "갱신 통지를 받지 못했는데 어떻게 해야 하나요?",
+            "renewals3Answer": "계정에 로그인하거나 즉시 NYC HRA에 연락하세요.",
+            "changesHelp1": "어떤 변경 사항을 보고해야 하나요?",
+            "changesHelp1Answer": "소득, 주소, 가구 규모, 임신 또는 새 보험.",
+            "changesHelp2": "소득이 증가하면 메디케이드를 잃게 되나요?",
+            "changesHelp2Answer": "반드시 그렇지는 않습니다. 다른 저비용 플랜으로 전환될 수 있습니다.",
+            "changesHelp3": "신청이 거부되었는데 어떻게 해야 하나요?",
+            "changesHelp3Answer": "항소하거나 공정한 청문회를 요청할 수 있습니다.",
+            "changesHelp4": "등록 도움은 어디서 받을 수 있나요?",
+            "changesHelp4Answer": "NYC 상담사, 커뮤니티 건강 센터 및 병원에서 무료 도움을 제공합니다.",
+            "changesHelp5": "제 언어로 도움을 받을 수 있나요?",
+            "changesHelp5Answer": "예. 여러 언어로 통역 서비스를 이용할 수 있습니다."
+        }
+    }
+}
