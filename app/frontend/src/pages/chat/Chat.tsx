@@ -548,7 +548,19 @@ const Chat = () => {
                                 <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
                             </div>
 
-                            <ExampleList onExampleClicked={onExampleClicked} useMultimodalAnswering={showMultimodalOptions} />
+                            <div className={styles.chatInputInline}>
+                                <QuestionInput
+                                    clearOnSend
+                                    placeholder={t("defaultExamples.placeholder")}
+                                    disabled={isLoading}
+                                    onSend={question => makeApiRequest(question)}
+                                    showSpeechInput={showSpeechInput}
+                                    isStreaming={isStreaming}
+                                    isLoading={isLoading}
+                                    onStop={onStopClick}
+                                    initQuestion={restoredQuestion}
+                                />
+                            </div>
 
                             <FAQ onQuestionClick={onExampleClicked} />
                         </div>
