@@ -35,34 +35,66 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, citationHeigh
     const isDisabledSupportingContentTab: boolean = !hasSupportingContent;
     const isDisabledCitationTab: boolean = !activeCitation;
     const [citation, setCitation] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const client = useLogin ? useMsal().instance : undefined;
     const { t } = useTranslation();
 
     const fetchCitation = async () => {
-        const token = client ? await getToken(client) : undefined;
-        if (activeCitation) {
+        if (!activeCitation) {
+            setCitation("");
+            return;
+        }
+
+        setIsLoading(true);
+        setError(null);
+
+        try {
+            const token = client ? await getToken(client) : undefined;
             // Get hash from the URL as it may contain #page=N
             // which helps browser PDF renderer jump to correct page N
             const hashIndex = activeCitation.indexOf("#");
             const originalHash = hashIndex >= 0 ? activeCitation.substring(hashIndex + 1) : "";
-            const response = await fetch(activeCitation, {
+            // Strip hash from fetch URL since browsers don't send fragments to server
+            const fetchUrl = hashIndex >= 0 ? activeCitation.substring(0, hashIndex) : activeCitation;
+
+            const response = await fetch(fetchUrl, {
                 method: "GET",
                 headers: await getHeaders(token)
             });
+
             if (!response.ok) {
+                console.error("Citation fetch failed:", response.status, response.statusText);
+                setError(`Failed to load citation: ${response.status}`);
                 setCitation("");
                 return;
             }
+
             const citationContent = await response.blob();
+            console.log("Citation blob type:", citationContent.type, "size:", citationContent.size);
+
+            if (citationContent.size === 0) {
+                setError("Citation file is empty");
+                setCitation("");
+                return;
+            }
+
             let citationObjectUrl = URL.createObjectURL(citationContent);
             // Add hash back to the new blob URL
             if (originalHash) {
                 citationObjectUrl += "#" + originalHash;
             }
             setCitation(citationObjectUrl);
+        } catch (err) {
+            console.error("Error fetching citation:", err);
+            setError("Error loading citation");
+            setCitation("");
+        } finally {
+            setIsLoading(false);
         }
     };
+
     useEffect(() => {
         fetchCitation();
     }, [activeCitation]);
@@ -72,9 +104,28 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, citationHeigh
             return null;
         }
 
-        const fileExtension = activeCitation.split(".").pop()?.toLowerCase();
+        if (isLoading) {
+            return <div style={{ padding: "20px", textAlign: "center" }}>Loading citation...</div>;
+        }
+
+        if (error) {
+            return <div style={{ padding: "20px", textAlign: "center", color: "red" }}>{error}</div>;
+        }
+
+        if (!citation) {
+            return <div style={{ padding: "20px", textAlign: "center" }}>No citation content available</div>;
+        }
+
+        // Extract file extension, stripping any hash fragment
+        const hashIndex = activeCitation.indexOf("#");
+        const pathWithoutHash = hashIndex >= 0 ? activeCitation.substring(0, hashIndex) : activeCitation;
+        const fileExtension = pathWithoutHash.split(".").pop()?.toLowerCase();
+
         switch (fileExtension) {
             case "png":
+            case "jpg":
+            case "jpeg":
+            case "gif":
                 return <img src={citation} className={styles.citationImg} alt="Citation Image" />;
             case "md":
                 return <MarkdownViewer src={activeCitation} />;
