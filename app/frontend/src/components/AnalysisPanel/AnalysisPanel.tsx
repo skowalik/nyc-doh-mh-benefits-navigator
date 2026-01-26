@@ -44,11 +44,16 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, citationHeigh
         if (activeCitation) {
             // Get hash from the URL as it may contain #page=N
             // which helps browser PDF renderer jump to correct page N
-            const originalHash = activeCitation.indexOf("#") ? activeCitation.split("#")[1] : "";
+            const hashIndex = activeCitation.indexOf("#");
+            const originalHash = hashIndex >= 0 ? activeCitation.substring(hashIndex + 1) : "";
             const response = await fetch(activeCitation, {
                 method: "GET",
                 headers: await getHeaders(token)
             });
+            if (!response.ok) {
+                setCitation("");
+                return;
+            }
             const citationContent = await response.blob();
             let citationObjectUrl = URL.createObjectURL(citationContent);
             // Add hash back to the new blob URL
@@ -60,7 +65,7 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, citationHeigh
     };
     useEffect(() => {
         fetchCitation();
-    }, []);
+    }, [activeCitation]);
 
     const renderFileViewer = () => {
         if (!activeCitation) {
