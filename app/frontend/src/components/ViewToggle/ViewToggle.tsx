@@ -9,6 +9,7 @@ interface Props {
 }
 
 const STORAGE_KEY = "nyc-benefits-view-mode";
+const VIEW_CHANGE_EVENT = "nyc-benefits-view-change";
 
 export const ViewToggle = ({ onViewChange }: Props) => {
     const { t } = useTranslation();
@@ -19,6 +20,7 @@ export const ViewToggle = ({ onViewChange }: Props) => {
 
     useEffect(() => {
         localStorage.setItem(STORAGE_KEY, viewMode);
+        window.dispatchEvent(new CustomEvent(VIEW_CHANGE_EVENT, { detail: viewMode }));
         onViewChange?.(viewMode);
     }, [viewMode, onViewChange]);
 
@@ -53,17 +55,27 @@ export const useViewMode = (): [ViewMode, (view: ViewMode) => void] => {
     });
 
     useEffect(() => {
+        const handleViewChange = (event: Event) => {
+            const customEvent = event as CustomEvent<ViewMode>;
+            setViewMode(customEvent.detail);
+        };
+
         const handleStorageChange = () => {
             const stored = localStorage.getItem(STORAGE_KEY);
             setViewMode((stored as ViewMode) || "assister");
         };
 
+        window.addEventListener(VIEW_CHANGE_EVENT, handleViewChange);
         window.addEventListener("storage", handleStorageChange);
-        return () => window.removeEventListener("storage", handleStorageChange);
+        return () => {
+            window.removeEventListener(VIEW_CHANGE_EVENT, handleViewChange);
+            window.removeEventListener("storage", handleStorageChange);
+        };
     }, []);
 
     const updateViewMode = (view: ViewMode) => {
         localStorage.setItem(STORAGE_KEY, view);
+        window.dispatchEvent(new CustomEvent(VIEW_CHANGE_EVENT, { detail: view }));
         setViewMode(view);
     };
 
