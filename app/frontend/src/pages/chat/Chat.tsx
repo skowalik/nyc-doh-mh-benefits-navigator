@@ -547,14 +547,16 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <div className={styles.heroSection}>
-                                <h1 className={styles.chatEmptyStateTitle}>
-                                    {viewMode === "assister" ? t("assisterView.chatEmptyStateTitle") : t("publicView.chatEmptyStateTitle")}
-                                </h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>
-                                    {viewMode === "assister" ? t("assisterView.chatEmptyStateSubtitle") : t("publicView.chatEmptyStateSubtitle")}
-                                </h2>
-                            </div>
+                            {viewMode === "public" && (
+                                <div className={styles.heroSection}>
+                                    <h1 className={styles.chatEmptyStateTitle}>
+                                        {t("publicView.chatEmptyStateTitle")}
+                                    </h1>
+                                    <h2 className={styles.chatEmptyStateSubtitle}>
+                                        {t("publicView.chatEmptyStateSubtitle")}
+                                    </h2>
+                                </div>
+                            )}
 
                             <div className={styles.chatInputInline}>
                                 <QuestionInput
