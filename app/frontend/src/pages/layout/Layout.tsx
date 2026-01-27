@@ -4,6 +4,7 @@ import styles from "./Layout.module.css";
 import { useLogin } from "../../authConfig";
 
 import { LoginButton } from "../../components/LoginButton";
+import { ViewToggle } from "../../components/ViewToggle";
 import nycLogo from "../../assets/nyc_health.png";
 
 const Layout = () => {
@@ -11,10 +12,15 @@ const Layout = () => {
         <div className={styles.layout}>
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
-                    <Link to="/" className={styles.headerTitleContainer}>
-                        <img src={nycLogo} alt="NYC Health" className={styles.headerLogo} />
-                        <h3 className={styles.headerTitle}>Benefits Navigator</h3>
-                    </Link>
+                    <div className={styles.headerLeftSection}>
+                        <Link to="/" className={styles.headerTitleContainer}>
+                            <img src={nycLogo} alt="NYC Health" className={styles.headerLogo} />
+                            <h3 className={styles.headerTitle}>Benefits Navigator</h3>
+                        </Link>
+                        <div className={styles.viewToggleWrapper}>
+                            <ViewToggle />
+                        </div>
+                    </div>
                     <div className={styles.loginMenuContainer}>{useLogin && <LoginButton />}</div>
                 </div>
             </header>

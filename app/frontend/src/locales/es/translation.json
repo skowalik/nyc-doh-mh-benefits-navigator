@@ -12,6 +12,21 @@
         "public": "Público",
         "switchView": "Cambiar vista"
     },
+    "assisterSidebar": {
+        "title": "Referencia Rápida",
+        "expand": "Expandir barra lateral",
+        "collapse": "Colapsar barra lateral",
+        "callNotes": "Notas de Llamada",
+        "clear": "Borrar",
+        "notesPlaceholder": "Ingrese notas sobre esta llamada...",
+        "eligibilityTitle": "Guías de Elegibilidad",
+        "incomeGuidelines": "Límites de Ingresos 2025 (138% FPL)",
+        "fplNote": "Basado en las guías del Nivel Federal de Pobreza 2025",
+        "documentsTitle": "Documentos Requeridos",
+        "identityDocs": "Verificación de Identidad",
+        "incomeDocs": "Verificación de Ingresos",
+        "quickLinksTitle": "Enlaces Rápidos"
+    },
     "assisterView": {
         "chatEmptyStateTitle": "Bienvenido a la Herramienta de Asistentes",
         "chatEmptyStateSubtitle": "Ayude a los clientes a navegar beneficios y regulaciones de salud",

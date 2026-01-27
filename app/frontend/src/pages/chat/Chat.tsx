@@ -25,7 +25,8 @@ import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
 import { LoginContext } from "../../loginContext";
 import { LanguagePicker } from "../../i18n/LanguagePicker";
 import { Settings } from "../../components/Settings/Settings";
-import { ViewToggle, useViewMode } from "../../components/ViewToggle";
+import { useViewMode } from "../../components/ViewToggle";
+import { AssisterSidebar } from "../../components/AssisterSidebar";
 
 const Chat = () => {
     const [viewMode, setViewMode] = useViewMode();
@@ -535,7 +536,6 @@ const Chat = () => {
                     )}
                 </div>
                 <div className={styles.commandsContainer}>
-                    <ViewToggle onViewChange={setViewMode} />
                     <LanguagePicker onLanguageChange={newLang => i18n.changeLanguage(newLang)} />
                     <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                     {showUserUpload && <UploadFile className={styles.commandButton} disabled={!loggedIn} />}
@@ -543,6 +543,7 @@ const Chat = () => {
                 </div>
             </div>
             <div className={styles.chatRoot} style={{ marginLeft: isHistoryPanelOpen ? "300px" : "0" }}>
+                {viewMode === "assister" && <AssisterSidebar />}
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>

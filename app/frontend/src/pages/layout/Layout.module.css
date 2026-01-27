@@ -32,12 +32,25 @@
     min-height: 44px;
 }
 
+.headerLeftSection {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .headerTitleContainer {
     display: flex;
     align-items: center;
     color: #002d72;
     text-decoration: none;
     gap: 0.5rem;
+}
+
+.viewToggleWrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    border-left: 1px solid #e2e8f0;
 }
 
 .headerLogo {
