@@ -1,0 +1,54 @@
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.label {
+    color: #718096;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.activeLabel {
+    color: #002d72;
+    font-weight: 600;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    background: #cbd5e0;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease;
+}
+
+.toggle:hover {
+    background: #a0aec0;
+}
+
+.toggle:focus {
+    outline: 2px solid #002d72;
+    outline-offset: 2px;
+}
+
+.slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: #002d72;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.sliderRight {
+    transform: translateX(18px);
+}

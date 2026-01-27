@@ -7,6 +7,21 @@
     "clearChat": "Clear chat",
     "retry": "Retry",
     "loginRequired": "Please login to continue...",
+    "viewToggle": {
+        "assister": "Assister",
+        "public": "Public",
+        "switchView": "Switch between assister and public view"
+    },
+    "assisterView": {
+        "chatEmptyStateTitle": "DOHMH Benefits Navigator",
+        "chatEmptyStateSubtitle": "Help New Yorkers navigate health benefits and eligibility questions",
+        "placeholder": "Enter the client's question about benefits, eligibility, or documents..."
+    },
+    "publicView": {
+        "chatEmptyStateTitle": "Welcome to the NYC Benefits Navigator",
+        "chatEmptyStateSubtitle": "Ask questions to learn about health benefits and regulations",
+        "placeholder": "Ask about benefits, eligibility, or required documents..."
+    },
     "history": {
         "chatHistory": "Chat history",
         "openChatHistory": "Open chat history",

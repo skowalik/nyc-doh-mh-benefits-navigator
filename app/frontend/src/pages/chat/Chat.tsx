@@ -25,8 +25,10 @@ import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
 import { LoginContext } from "../../loginContext";
 import { LanguagePicker } from "../../i18n/LanguagePicker";
 import { Settings } from "../../components/Settings/Settings";
+import { ViewToggle, useViewMode } from "../../components/ViewToggle";
 
 const Chat = () => {
+    const [viewMode, setViewMode] = useViewMode();
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
     const [isHistoryPanelOpen, setIsHistoryPanelOpen] = useState(false);
     const [promptTemplate, setPromptTemplate] = useState<string>("");
@@ -533,6 +535,7 @@ const Chat = () => {
                     )}
                 </div>
                 <div className={styles.commandsContainer}>
+                    <ViewToggle onViewChange={setViewMode} />
                     <LanguagePicker onLanguageChange={newLang => i18n.changeLanguage(newLang)} />
                     <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                     {showUserUpload && <UploadFile className={styles.commandButton} disabled={!loggedIn} />}
@@ -544,14 +547,18 @@ const Chat = () => {
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             <div className={styles.heroSection}>
-                                <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
+                                <h1 className={styles.chatEmptyStateTitle}>
+                                    {viewMode === "assister" ? t("assisterView.chatEmptyStateTitle") : t("publicView.chatEmptyStateTitle")}
+                                </h1>
+                                <h2 className={styles.chatEmptyStateSubtitle}>
+                                    {viewMode === "assister" ? t("assisterView.chatEmptyStateSubtitle") : t("publicView.chatEmptyStateSubtitle")}
+                                </h2>
                             </div>
 
                             <div className={styles.chatInputInline}>
                                 <QuestionInput
                                     clearOnSend
-                                    placeholder={t("defaultExamples.placeholder")}
+                                    placeholder={viewMode === "assister" ? t("assisterView.placeholder") : t("publicView.placeholder")}
                                     disabled={isLoading}
                                     onSend={question => makeApiRequest(question)}
                                     showSpeechInput={showSpeechInput}

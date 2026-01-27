@@ -7,6 +7,21 @@
     "clearChat": "Borrar chat",
     "retry": "Reintentar",
     "loginRequired": "Por favor inicie sesión para continuar...",
+    "viewToggle": {
+        "assister": "Asistente",
+        "public": "Público",
+        "switchView": "Cambiar vista"
+    },
+    "assisterView": {
+        "chatEmptyStateTitle": "Bienvenido a la Herramienta de Asistentes",
+        "chatEmptyStateSubtitle": "Ayude a los clientes a navegar beneficios y regulaciones de salud",
+        "placeholder": "Busque políticas, verificación de elegibilidad o guía de documentos..."
+    },
+    "publicView": {
+        "chatEmptyStateTitle": "Bienvenido al NYC Benefits Navigator",
+        "chatEmptyStateSubtitle": "Haga preguntas para aprender sobre beneficios de salud y regulaciones",
+        "placeholder": "Pregunte sobre beneficios, elegibilidad o documentos requeridos..."
+    },
     "history": {
         "chatHistory": "Historial de chat",
         "openChatHistory": "Abrir historial de chat",
