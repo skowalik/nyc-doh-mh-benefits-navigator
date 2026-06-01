@@ -309,6 +309,104 @@ async def test_check_path_auth_allowed_without_access_control(
 
 
 @pytest.mark.asyncio
+async def test_check_public_path_auth_denied(monkeypatch, mock_confidential_client_success, mock_validate_token_success):
+    auth_helper = create_authentication_helper(enforce_access_control=True, enable_unauthenticated_access=True)
+    captured_filter = None
+
+    async def mock_search(self, *args, **kwargs):
+        nonlocal captured_filter
+        captured_filter = kwargs.get("filter")
+        assert kwargs.get("x_ms_query_source_authorization") is None
+        return MockAsyncPageIterator(data=[])
+
+    monkeypatch.setattr(SearchClient, "search", mock_search)
+
+    assert (
+        await auth_helper.check_public_path_auth(
+            path="secret-doc.pdf",
+            search_client=create_search_client(),
+        )
+        is False
+    )
+    assert "oids/any(o: o eq 'all') or groups/any(g: g eq 'all')" in captured_filter
+    assert "sourcefile eq 'secret-doc.pdf'" in captured_filter
+
+
+@pytest.mark.asyncio
+async def test_check_public_path_auth_allowed(
+    monkeypatch, mock_confidential_client_success, mock_validate_token_success
+):
+    auth_helper = create_authentication_helper(enforce_access_control=True, enable_unauthenticated_access=True)
+    captured_filter = None
+
+    async def mock_search(self, *args, **kwargs):
+        nonlocal captured_filter
+        captured_filter = kwargs.get("filter")
+        assert kwargs.get("x_ms_query_source_authorization") is None
+        return MockAsyncPageIterator(data=[{"sourcefile": "public-doc.pdf", "oids": ["all"], "groups": ["all"]}])
+
+    monkeypatch.setattr(SearchClient, "search", mock_search)
+
+    assert (
+        await auth_helper.check_public_path_auth(
+            path="public-doc.pdf",
+            search_client=create_search_client(),
+        )
+        is True
+    )
+    assert "oids/any(o: o eq 'all') or groups/any(g: g eq 'all')" in captured_filter
+
+
+@pytest.mark.asyncio
+async def test_check_public_path_auth_without_access_control(
+    monkeypatch, mock_confidential_client_success, mock_validate_token_success
+):
+    auth_helper = create_authentication_helper(enforce_access_control=False, enable_unauthenticated_access=True)
+    called_search = False
+
+    async def mock_search(self, *args, **kwargs):
+        nonlocal called_search
+        called_search = True
+        return MockAsyncPageIterator(data=[])
+
+    monkeypatch.setattr(SearchClient, "search", mock_search)
+
+    assert (
+        await auth_helper.check_public_path_auth(
+            path="any-doc.pdf",
+            search_client=create_search_client(),
+        )
+        is True
+    )
+    assert called_search is False
+
+
+@pytest.mark.asyncio
+async def test_check_public_path_auth_with_fragment(
+    monkeypatch, mock_confidential_client_success, mock_validate_token_success
+):
+    auth_helper = create_authentication_helper(enforce_access_control=True, enable_unauthenticated_access=True)
+    captured_filter = None
+
+    async def mock_search(self, *args, **kwargs):
+        nonlocal captured_filter
+        captured_filter = kwargs.get("filter")
+        return MockAsyncPageIterator(data=[{"sourcefile": "public-doc.pdf", "oids": ["all"], "groups": ["all"]}])
+
+    monkeypatch.setattr(SearchClient, "search", mock_search)
+
+    assert (
+        await auth_helper.check_public_path_auth(
+            path="public-doc.pdf#page=5",
+            search_client=create_search_client(),
+        )
+        is True
+    )
+    assert "sourcefile eq 'public-doc.pdf'" in captured_filter
+    assert "#page=5" not in captured_filter
+
+
+@pytest.mark.asyncio
 async def test_create_pem_format(mock_confidential_client_success, mock_validate_token_success):
     helper = create_authentication_helper()
     mock_token, public_key, payload = create_mock_jwt(oid="OID_X")

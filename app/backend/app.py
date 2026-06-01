@@ -306,7 +306,8 @@ def config():
 
 
 @bp.route("/speech", methods=["POST"])
-async def speech():
+@authenticated
+async def speech(auth_claims: dict[str, Any]):
     if not request.is_json:
         return jsonify({"error": "request must be json"}), 415
 

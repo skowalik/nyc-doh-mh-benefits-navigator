@@ -31,7 +31,7 @@ def authenticated_path(route_fn: Callable[[str, dict[str, Any]], Any]):
             if auth_helper.enforce_access_control:
                 if not auth_claims:
                     if auth_helper.enable_unauthenticated_access:
-                        authorized = True
+                        authorized = await auth_helper.check_public_path_auth(path, search_client)
                     else:
                         abort(403)
                 else:

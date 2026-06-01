@@ -173,28 +173,55 @@ class AuthenticationHelper:
                 raise
             return {}
 
+    @staticmethod
+    def build_path_filter(path: str) -> tuple[str, str]:
+        """Build a search filter for the given path, stripping fragments and escaping quotes."""
+        fragment_index = path.find("#")
+        if fragment_index != -1:
+            path = path[:fragment_index]
+        # Replace ' with '' to escape the single quote for the filter
+        # https://learn.microsoft.com/azure/search/query-odata-filter-orderby-syntax#escaping-special-characters-in-string-constants
+        path_for_filter = path.replace("'", "''")
+        filter = f"(sourcefile eq '{path_for_filter}') or (sourcepage eq '{path_for_filter}')"
+        return path, filter
+
     async def check_path_auth(self, path: str, auth_claims: dict[str, Any], search_client: SearchClient) -> bool:
         # If there was no access control or no path, then the path is allowed
         if not self.enforce_access_control or len(path) == 0:
             return True
 
-        # Remove any fragment string from the path before checking
-        fragment_index = path.find("#")
-        if fragment_index != -1:
-            path = path[:fragment_index]
-
-        # Filter down to only chunks that are from the specific source file
-        # Sourcepage is used for GPT-4V
-        # Replace ' with '' to escape the single quote for the filter
-        # https://learn.microsoft.com/azure/search/query-odata-filter-orderby-syntax#escaping-special-characters-in-string-constants
-        path_for_filter = path.replace("'", "''")
-        filter = f"(sourcefile eq '{path_for_filter}') or (sourcepage eq '{path_for_filter}')"
+        path, filter = self.build_path_filter(path)
 
         # If the filter returns any results, the user is allowed to access the document
         # Otherwise, access is denied
         results = await search_client.search(
             search_text="*", top=1, filter=filter, x_ms_query_source_authorization=auth_claims["access_token"]
         )
+        allowed = False
+        async for _ in results:
+            allowed = True
+            break
+
+        return allowed
+
+    async def check_public_path_auth(self, path: str, search_client: SearchClient) -> bool:
+        """Check if an unauthenticated user can access a document.
+
+        Only documents explicitly marked with the special ["all"] ACL value
+        are accessible to anonymous users. This prevents unauthenticated users
+        from bypassing document-level access control.
+        See https://learn.microsoft.com/azure/search/search-index-access-control-lists-and-rbac-push-api#special-acl-values-all-and-none
+        """
+        if not self.enforce_access_control or len(path) == 0:
+            return True
+
+        path, path_filter = self.build_path_filter(path)
+
+        # Only allow access to documents explicitly marked as globally accessible
+        global_acl_filter = "oids/any(o: o eq 'all') or groups/any(g: g eq 'all')"
+        combined_filter = f"({path_filter}) and ({global_acl_filter})"
+
+        results = await search_client.search(search_text="*", top=1, filter=combined_filter)
         allowed = False
         async for _ in results:
             allowed = True
