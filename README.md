@@ -1,7 +1,7 @@
 <!--
 ---
-name: RAG chat app with your data (Python)
-description: Chat with your domain data using Azure OpenAI and Azure AI Search.
+name: NYC DOHMH Benefits Navigator
+description: AI-powered assistant helping NYC DOH Mental Hygiene call center workers and the public navigate Medicaid, Child Health Plus, and Essential Plan benefits.
 languages:
 - python
 - typescript
@@ -13,59 +13,67 @@ products:
 - azure-app-service
 - azure
 page_type: sample
-urlFragment: azure-search-openai-demo
+urlFragment: nyc-doh-mh-benefits-navigator
 ---
 -->
 
-# RAG chat app with Azure OpenAI and Azure AI Search (Python)
+# NYC DOHMH Benefits Navigator
 
-This solution creates a ChatGPT-like frontend experience over your own documents using RAG (Retrieval Augmented Generation). It uses Azure OpenAI Service to access GPT models, and Azure AI Search for data indexing and retrieval.
+An AI-powered assistant that helps **NYC Department of Health and Mental Hygiene (DOHMH)** call center workers — and the public — quickly find answers about Medicaid, Child Health Plus, Essential Plan eligibility, enrollment, renewals, and regulations.
 
-This solution's backend is written in Python. There are also [**JavaScript**](https://aka.ms/azai/js/code), [**.NET**](https://aka.ms/azai/net/code), and [**Java**](https://aka.ms/azai/java/code) samples based on this one. Learn more about [developing AI apps using Azure AI Services](https://aka.ms/azai).
-
-[![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=599293758&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestUs2)
-[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/azure-search-openai-demo)
-[![Open in VS Code for the Web](https://img.shields.io/static/v1?style=for-the-badge&label=VS+Code+for+the+Web&message=Open&color=purple&logo=visualstudiocode)](https://vscode.dev/azure?azdTemplateUrl=https://github.com/azure-samples/azure-search-openai-demo)
-
-## Important Security Notice
-
-This template, the application code and configuration it contains, has been built to showcase Microsoft Azure specific services and tools. We strongly advise our customers not to make this code part of their production environments without implementing or enabling additional security features. See our [productionizing guide](docs/productionizing.md) for tips, and consult the [Azure OpenAI Landing Zone reference architecture](https://techcommunity.microsoft.com/blog/azurearchitectureblog/azure-openai-landing-zone-reference-architecture/3882102) for more best practices.
-
-## Table of Contents
-
-- [Features](#features)
-- [Azure account requirements](#azure-account-requirements)
-  - [Cost estimation](#cost-estimation)
-- [Getting Started](#getting-started)
-  - [GitHub Codespaces](#github-codespaces)
-  - [VS Code Dev Containers](#vs-code-dev-containers)
-  - [Local environment](#local-environment)
-- [Deploying](#deploying)
-  - [Deploying again](#deploying-again)
-- [Running the development server](#running-the-development-server)
-- [Using the app](#using-the-app)
-- [Clean up](#clean-up)
-- [Guidance](#guidance)
-  - [Resources](#resources)
+Built on Azure OpenAI and Azure AI Search using the [RAG (Retrieval Augmented Generation)](https://learn.microsoft.com/azure/search/retrieval-augmented-generation-overview) pattern, the app indexes real NYC DOH policy documents and returns grounded, cited answers — never hallucinated information.
 
 ![Chat screen](docs/images/chatscreen.png)
 
-[📺 Watch a video overview of the app.](https://youtu.be/3acB0OWmLvM)
+## The Problem
 
-This sample demonstrates a few approaches for creating ChatGPT-like experiences over your own data using the Retrieval Augmented Generation pattern. It uses Azure OpenAI Service to access a GPT model (gpt-4.1-mini), and Azure AI Search for data indexing and retrieval.
+DOHMH benefits call center assisters handle thousands of calls from New Yorkers with questions about health insurance eligibility, required documents, managed care plans, renewals, and more. Assisters must navigate dozens of policy PDFs, income tables, and regulation documents to find accurate answers — often while a caller is waiting on the line.
 
-The repo includes sample data so it's ready to try end to end. In this sample application we use a fictitious company called Zava, and the experience allows its employees to ask questions about the benefits, internal policies, as well as job descriptions and roles.
+## How This App Helps
 
-## Features
+The Benefits Navigator gives assisters (and the public) an AI chat interface that **instantly retrieves answers from official NYC DOH policy documents**, with source citations so every answer can be verified.
 
-- Chat (multi-turn) interface
-- Renders citations and thought process for each answer
-- Includes settings directly in the UI to tweak the behavior and experiment with options
-- Integrates Azure AI Search for indexing and retrieval of documents, with support for [many document formats](/docs/data_ingestion.md#supported-document-formats) as well as [cloud data ingestion](/docs/data_ingestion.md#cloud-data-ingestion)
-- Optional usage of [multimodal models](/docs/multimodal.md) to reason over image-heavy documents
-- Optional addition of [speech input/output](/docs/deploy_features.md#enabling-speech-inputoutput) for accessibility
-- Optional automation of [user login and data access](/docs/login_and_acl.md) via Microsoft Entra
+### Two Views, One App
+
+| Assister View | Public View |
+|---------------|-------------|
+| Designed for call center workers | Designed for NYC residents |
+| Includes a **Quick Reference sidebar** with call notes, income guidelines, required documents checklist, and quick links | Clean, simple chat experience |
+| Chat placeholder: *"Enter the client's question about benefits, eligibility, or documents..."* | Chat placeholder: *"Ask about benefits, eligibility, or required documents..."* |
+
+### Key Features for Call Center Workers
+
+- **🔍 Instant policy lookup** — Ask natural-language questions and get answers grounded in official DOH documents, with clickable source citations
+- **📋 Quick Reference sidebar** — At-a-glance 2025 income limits (138% FPL), required identity/income documents, and links to ACCESS NYC, NY Medicaid Portal, and the Medicaid application
+- **📝 Call Notes** — Per-call notepad persisted in the browser for documenting caller interactions
+- **❓ FAQ library** — Pre-built questions across 8 categories (Eligibility, Applying, After Enrollment, Benefits, Managed Care, Renewals, Changes & Help) that assisters can send with one click
+- **🌐 10 languages** — Full UI translations in English, Spanish, Chinese, Russian, Haitian Creole, Bengali, Korean, Yiddish, Arabic, and Polish — matching the most common languages spoken by NYC residents
+- **🔊 Speech input/output** — Optional voice interaction for accessibility
+- **📄 Document citations** — Every answer links back to the specific source PDF so assisters can verify and share official documentation
+
+### Included Policy Documents
+
+The `data/` folder contains official NYC DOH documents that power the AI, including:
+
+- 2025 income levels for Medicaid, Child Health Plus, and Essential Plan
+- NYS regulations (18 NYCRR 349–542)
+- Authorized representative guidelines
+- Identity proofing requirements
+- Privacy, security, and consent forms (English & Spanish)
+- Open enrollment and renewals webinar materials
+- Child Health Plus desk aids
+- Document linking checklists
+- DACA-related guidance
+
+## General Features
+
+- Multi-turn chat with source citations and thought process transparency
+- Integrates Azure AI Search for document indexing and retrieval, with support for [many document formats](/docs/data_ingestion.md#supported-document-formats) as well as [cloud data ingestion](/docs/data_ingestion.md#cloud-data-ingestion)
+- Optional [multimodal models](/docs/multimodal.md) for image-heavy documents
+- Optional [speech input/output](/docs/deploy_features.md#enabling-speech-inputoutput) for accessibility
+- Optional [user login and access control](/docs/login_and_acl.md) via Microsoft Entra
 - Performance tracing and monitoring with Application Insights
+- Developer settings panel to adjust retrieval and LLM behavior
 
 ### Architecture Diagram
 
@@ -229,9 +237,11 @@ See more tips in [the local development guide](docs/localdev.md).
 
 Once in the web app:
 
-- Try different topics in chat. Try follow up questions, clarifications, ask to simplify or elaborate on answer, etc.
-- Explore citations and sources
-- Click on "settings" to try different options, tweak prompts, etc.
+- **Toggle between Assister and Public views** using the switch in the header
+- **Assister view**: Use the sidebar for quick reference while chatting with callers. Take call notes, check income guidelines, and click FAQ questions to get instant answers.
+- **Public view**: Share this URL with NYC residents so they can self-serve common benefits questions.
+- Explore citations — click any source to view the original policy document
+- Click on "settings" to adjust retrieval and LLM behavior
 
 ## Clean up
 
@@ -299,4 +309,4 @@ join the Azure AI Foundry Developer Community:
 
 ### Note
 
->Note: The PDF documents used in this demo contain information generated using a language model (Azure OpenAI Service). The information contained in these documents is only for demonstration purposes and does not reflect the opinions or beliefs of Microsoft. Microsoft makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the information contained in this document. All rights reserved to Microsoft.
+> This application was built for the NYC Department of Health and Mental Hygiene to assist benefits call center workers. The policy documents in the `data/` folder are official NYC DOH materials. The AI-generated answers are grounded in these source documents and include citations, but should always be verified against official policy before making eligibility determinations.
